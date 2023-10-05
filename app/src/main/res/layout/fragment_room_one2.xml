@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RoomOne2"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageButton
+        android:id="@+id/first2Left"
+        android:layout_width="63dp"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/left"
+        app:backgroundTint="#FFF" />
+
+    <ImageButton
+        android:id="@+id/first2Right"
+        android:layout_width="63dp"
+        android:layout_height="73dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/right"
+        app:backgroundTint="#FFF" />
+
+    <com.example.onceuponatime.Puzzle
+        android:id="@+id/firstPlates"
+        android:layout_width="193dp"
+        android:layout_height="173dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/pnc" />
+
+    <com.example.onceuponatime.Puzzle
+        android:id="@+id/firstBookcase"
+        android:layout_width="322dp"
+        android:layout_height="230dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/bookcase" />
+</RelativeLayout>
