@@ -1,5 +1,9 @@
 package com.example.onceuponatime;
 
+import static com.example.onceuponatime.MainActivity.objects1;
+import static com.example.onceuponatime.MainActivity.puzzles1;
+import static com.example.onceuponatime.Scene.getResId;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +11,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
+
+import com.example.onceuponatime.Puzzles.FirstChest;
+import com.example.onceuponatime.Puzzles.FirstCloset;
 
 public class RoomOne3 extends Fragment implements View.OnClickListener {
 
@@ -19,8 +24,6 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
     private String mParam2;
 
     View view;
-
-    ImageButton left, right;
 
     public RoomOne3() {
     }
@@ -53,6 +56,26 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
             case (R.id.first3Right):
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne4()).addToBackStack(null).commit();
                 break;
+
+            case (R.id.first3Window):
+                Object window = view.findViewById(R.id.first3Window);
+
+                if (MainActivity.firstWindowOpen)
+                    window.setIcon("window_close");
+                else
+                    window.setIcon("window_open");
+
+                MainActivity.firstWindowOpen = !MainActivity.firstWindowOpen;
+
+                break;
+
+            case (R.id.first3Closet):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new FirstCloset()).addToBackStack(null).commit();
+                break;
+
+            case (R.id.first3Chest):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new FirstChest()).addToBackStack(null).commit();
+                break;
         }
     }
 
@@ -62,11 +85,44 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_room_one3, container, false);
 
-        left = (ImageButton) view.findViewById(R.id.first3Left);
-        left.setOnClickListener(this);
+        for (ObjectInfo object : objects1.get(2)) {
+            try {
+                int resID = getResId(object.name, R.id.class);
+                Object obj = (Object) view.findViewById(resID);
 
-        right = (ImageButton) view.findViewById(R.id.first3Right);
-        right.setOnClickListener(this);
+                obj.setParam(object.name, object.icon);
+                obj.setOnClickListener(this);
+
+                if (obj.name.trim().equals("first3Bird")) {
+                    if (!MainActivity.firstWindowOpen || MainActivity.firstBird1Saw)
+                        obj.setVisibility(View.GONE);
+
+                } else if (obj.name.trim().equals("first3Window"))
+                    if (MainActivity.firstWindowOpen) {
+                        obj.setEnabled(false);
+                        obj.setIcon("window_open");
+                        MainActivity.firstBird1Saw = true;
+                    }
+
+
+            }
+            catch(NullPointerException ignored) {}
+        }
+
+        for (PuzzleInfo puzzle : puzzles1.get(2)) {
+            try {
+                int resID = getResId(puzzle.name, R.id.class);
+                Puzzle puzz = (Puzzle) view.findViewById(resID);
+
+                puzz.setParam(puzzle.name, puzzle.scene, puzzle.icon);
+                puzz.setOnClickListener(this);
+
+                if (puzzle.used)
+                    puzz.setEnabled(false);
+
+            }
+            catch(NullPointerException ignored) {}
+        }
 
         return view;
     }

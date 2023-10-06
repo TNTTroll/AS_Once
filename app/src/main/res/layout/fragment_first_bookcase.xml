@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,43 +8,67 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBookcaseBack"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="628dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/back"
         android:contentDescription="@string/app_name" />
 
+    <com.example.onceuponatime.Holder
+        android:id="@+id/firstBookPlacement"
+        android:layout_width="83dp"
+        android:layout_height="123dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="69dp"
+        android:background="@drawable/plate" />
+
     <com.example.onceuponatime.Object
-        android:id="@+id/firstBook1"
+        android:id="@+id/firstBook_1"
         android:layout_width="83dp"
         android:layout_height="123dp"
         android:background="@drawable/book1" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstBook2"
+        android:id="@+id/firstBook_2"
         android:layout_width="83dp"
         android:layout_height="123dp"
         android:background="@drawable/book2" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstBook3"
+        android:id="@+id/firstBook_3"
         android:layout_width="83dp"
         android:layout_height="123dp"
         android:background="@drawable/book3" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstBook4"
+        android:id="@+id/firstBook_4"
         android:layout_width="83dp"
         android:layout_height="123dp"
         android:background="@drawable/book4" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstBook5"
+        android:id="@+id/firstBook_5"
         android:layout_width="83dp"
         android:layout_height="123dp"
         android:background="@drawable/book5" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstBookSolved"
+        android:layout_width="wrap_content"
+        android:layout_height="137dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="279dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="297dp"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/black" />
 
 </RelativeLayout>

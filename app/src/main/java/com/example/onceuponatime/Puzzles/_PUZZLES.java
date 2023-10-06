@@ -9,4 +9,8 @@ public class _PUZZLES {
     public static int[] firstBooksSequence = {1, 2, 3, 5, 4};
     public static int[] firstBooksPosX = {500, 200};  // Start, offset
     public static int firstBooksPosY = 100;
+
+    public static int[] firstClosetSequence = {1, 3, 2};
+
+    public static String[] firstChestSequence = {"sign_1", "sign_4", "sign_7", "sign_10", "sign_14"};
 }

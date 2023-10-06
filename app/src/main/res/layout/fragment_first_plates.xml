@@ -7,12 +7,12 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstPlatesBack"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="628dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/back"
         android:contentDescription="@string/app_name" />
 
@@ -28,7 +28,7 @@
         android:contentDescription="@string/app_name" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstPlate1"
+        android:id="@+id/firstPlate_1"
         android:layout_width="117dp"
         android:layout_height="107dp"
         android:layout_alignParentStart="true"
@@ -38,7 +38,7 @@
         android:background="@drawable/plate" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstPlate2"
+        android:id="@+id/firstPlate_2"
         android:layout_width="117dp"
         android:layout_height="107dp"
         android:layout_alignParentStart="true"
@@ -48,7 +48,7 @@
         android:background="@drawable/plate" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstPlate3"
+        android:id="@+id/firstPlate_3"
         android:layout_width="117dp"
         android:layout_height="107dp"
         android:layout_alignParentStart="true"
@@ -58,7 +58,7 @@
         android:background="@drawable/plate" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstPlate4"
+        android:id="@+id/firstPlate_4"
         android:layout_width="117dp"
         android:layout_height="107dp"
         android:layout_alignParentStart="true"

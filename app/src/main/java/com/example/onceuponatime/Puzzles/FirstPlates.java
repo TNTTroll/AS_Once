@@ -2,13 +2,11 @@ package com.example.onceuponatime.Puzzles;
 
 import static com.example.onceuponatime.MainActivity.objects1;
 import static com.example.onceuponatime.Scene.getResId;
-import static com.example.onceuponatime.Scene.setPuzzleUsed;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +30,7 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object back, arrow;
+    Object arrow;
 
     int[] needPlate = _PUZZLES.firstPlatesSequence;
 
@@ -97,6 +95,7 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
                 if (arrow.setToInventory()) {
                     arrow.setVisibility(View.GONE);
                     MainActivity.firstTookHourArrow = true;
+
                 }
 
                 break;
@@ -111,27 +110,22 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_first_plates, container, false);
 
-        back = (Object) view.findViewById(R.id.firstPlatesBack);
-        back.setOnClickListener(this);
-
         int plateCount = 0;
         for (ObjectInfo object : objects1.get(1)) {
             try {
-                if ( object.getName().startsWith("firstHourArrow") ) {
-                    arrow = (Object) view.findViewById(R.id.firstHourArrow);
+                int resID = getResId(object.getName(), R.id.class);
+                Object obj = (Object) view.findViewById(resID);
 
-                    arrow.setParam(object.getName(), object.getIcon());
-                    arrow.setOnClickListener(this);
+                obj.setParam(object.getName(), object.getIcon());
+                obj.setOnClickListener(this);
+
+                if ( object.getName().startsWith("firstHourArrow") ) {
+                    arrow = obj;
 
                     if (MainActivity.firstTookHourArrow || !MainActivity.firstPlatesDone)
                         arrow.setVisibility(View.GONE);
 
-                } else if ( object.getName().startsWith("firstPlate") ) {
-                    int resID = getResId(object.getName(), R.id.class);
-                    Object obj = (Object) view.findViewById(resID);
-
-                    obj.setParam(object.getName(), object.getIcon());
-                    obj.setOnClickListener(this);
+                } else if ( object.getName().startsWith("firstPlate_") ) {
 
                     if (MainActivity.firstPlatesDone)
                         obj.setEnabled(false);

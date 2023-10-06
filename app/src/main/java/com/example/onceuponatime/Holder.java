@@ -26,6 +26,8 @@ public class Holder extends androidx.appcompat.widget.AppCompatButton {
         super(context, attrs, defStyle);
     }
 
+    public String getName() { return name; }
+
     public void setParam(String _name, String _need, String _icon) {
         name = _name;
         need = _need.trim();

@@ -1,5 +1,6 @@
 package com.example.onceuponatime;
 
+import static com.example.onceuponatime.MainActivity.objects1;
 import static com.example.onceuponatime.MainActivity.puzzles1;
 import static com.example.onceuponatime.Scene.getResId;
 
@@ -7,12 +8,9 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.example.onceuponatime.Puzzles.FirstBookcase;
 import com.example.onceuponatime.Puzzles.FirstPlates;
@@ -26,8 +24,6 @@ public class RoomOne2 extends Fragment implements View.OnClickListener {
     private String mParam2;
 
     View view;
-
-    ImageButton left, right;
 
     public RoomOne2() {
     }
@@ -78,11 +74,17 @@ public class RoomOne2 extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_room_one2, container, false);
 
-        left = (ImageButton) view.findViewById(R.id.first2Left);
-        left.setOnClickListener(this);
+        for (ObjectInfo object : objects1.get(1)) {
+            try {
+                int resID = getResId(object.name, R.id.class);
+                Object obj = (Object) view.findViewById(resID);
 
-        right = (ImageButton) view.findViewById(R.id.first2Right);
-        right.setOnClickListener(this);
+                obj.setParam(object.name, object.icon);
+                obj.setOnClickListener(this);
+
+            }
+            catch(NullPointerException ignored) {}
+        }
 
         for (PuzzleInfo puzzle : puzzles1.get(1)) {
             try {
@@ -90,9 +92,7 @@ public class RoomOne2 extends Fragment implements View.OnClickListener {
                 Puzzle puzz = (Puzzle) view.findViewById(resID);
 
                 puzz.setParam(puzzle.name, puzzle.scene, puzzle.icon);
-
-                if (!puzzle.used)
-                    puzz.setOnClickListener(this);
+                puzz.setOnClickListener(this);
 
             }
             catch(NullPointerException ignored) {}

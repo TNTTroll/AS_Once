@@ -7,13 +7,7 @@
     tools:context=".RoomOne3"
     tools:ignore="MissingDefaultResource">
 
-    <com.example.onceuponatime.Holder
-        android:id="@+id/holder"
-        android:layout_width="246dp"
-        android:layout_height="72dp"
-        android:text="com.example.onceuponatime.Holder" />
-
-    <ImageButton
+    <com.example.onceuponatime.Object
         android:id="@+id/first3Left"
         android:layout_width="63dp"
         android:layout_height="73dp"
@@ -25,10 +19,9 @@
         android:layout_marginBottom="160dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/left"
-        app:backgroundTint="#FFF" />
+        android:background="@drawable/left" />
 
-    <ImageButton
+    <com.example.onceuponatime.Object
         android:id="@+id/first3Right"
         android:layout_width="63dp"
         android:layout_height="73dp"
@@ -40,7 +33,46 @@
         android:layout_marginBottom="160dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/right"
-        app:backgroundTint="#FFF" />
+        android:background="@drawable/right" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/first3Window"
+        android:layout_width="256dp"
+        android:layout_height="210dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/window_close" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/first3Bird"
+        android:layout_width="111dp"
+        android:layout_height="99dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="209dp"
+        android:layout_marginTop="143dp"
+        android:background="@drawable/bird" />
+
+    <com.example.onceuponatime.Puzzle
+        android:id="@+id/first3Closet"
+        android:layout_width="236dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="410dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/pnc" />
+
+    <com.example.onceuponatime.Puzzle
+        android:id="@+id/first3Chest"
+        android:layout_width="158dp"
+        android:layout_height="132dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="453dp"
+        android:layout_marginTop="249dp"
+        android:background="@drawable/pnc" />
 
 </RelativeLayout>

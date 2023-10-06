@@ -11,6 +11,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class Object extends androidx.appcompat.widget.AppCompatButton {
     String name;
+    String iconName;
     Drawable icon;
 
     public Object(Context _context) {
@@ -27,8 +28,8 @@ public class Object extends androidx.appcompat.widget.AppCompatButton {
 
     public void setParam(String _name, String _icon) {
         name = _name;
-        icon = ResourcesCompat.getDrawable(getResources(), getResId(_icon, R.drawable.class), null);
-        this.setBackground(icon);
+        iconName = _icon;
+        changeIcon();
     }
 
     public boolean setToInventory() {
@@ -42,16 +43,25 @@ public class Object extends androidx.appcompat.widget.AppCompatButton {
         return false;
     }
 
-    public void setIcon(String _newIcon) {
-        icon = ResourcesCompat.getDrawable(getResources(), getResId(_newIcon, R.drawable.class), null);
+    public void changeIcon() {
+        icon = ResourcesCompat.getDrawable(getResources(), getResId(iconName, R.drawable.class), null);
         this.setBackground( icon );
     }
 
     public void setName(String _name) {
         name = _name;
     }
+
     public String getName() {
         return name;
     }
 
+    public void setIcon(String _newIcon) {
+        iconName = _newIcon;
+        changeIcon();
+    }
+
+    public String getIcon() {
+        return iconName;
+    }
 }

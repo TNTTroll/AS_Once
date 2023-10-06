@@ -20,10 +20,10 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
     private View roomView;
 
     @SuppressLint("StaticFieldLeak")
-    private static ImageButton[] btn_invs = new ImageButton[5];
+    private static ImageButton[] btn_invs = new ImageButton[4];
     public static int current_Item = -1;
 
-    public static Object[] inventory = new Object[5];
+    public static Object[] inventory = new Object[4];
 
     public static void reloadInventory() {
         for (int x = 0; x < btn_invs.length; x++) {
@@ -102,34 +102,6 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
         } catch (Exception e) {
             return -1;
         }
-    }
-
-    public static void setPuzzleUsed(String puzzleScene, int room) {
-
-        ArrayList<PuzzleInfo> puzzles;
-
-        if (room == 1) {
-            puzzles = puzzles1.get(0);
-            puzzles.addAll( puzzles1.get(1) );
-            puzzles.addAll( puzzles1.get(2) );
-            puzzles.addAll( puzzles1.get(3) );
-        } else if (room == 2) {
-            puzzles = puzzles2.get(0);
-            puzzles.addAll( puzzles2.get(1) );
-            puzzles.addAll( puzzles2.get(2) );
-            puzzles.addAll( puzzles2.get(3) );
-        } else {
-            puzzles = puzzles3.get(0);
-            puzzles.addAll( puzzles3.get(1) );
-            puzzles.addAll( puzzles3.get(2) );
-            puzzles.addAll( puzzles3.get(3) );
-        }
-
-
-        for (PuzzleInfo puzzle : puzzles)
-            if (puzzle.scene.trim().equals(puzzleScene))
-                puzzle.used = true;
-
     }
 
 }

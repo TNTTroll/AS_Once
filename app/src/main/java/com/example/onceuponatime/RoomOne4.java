@@ -1,5 +1,9 @@
 package com.example.onceuponatime;
 
+import static com.example.onceuponatime.MainActivity.objects1;
+import static com.example.onceuponatime.MainActivity.puzzles1;
+import static com.example.onceuponatime.Scene.getResId;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.onceuponatime.Puzzles.FirstClock;
+import com.example.onceuponatime.Puzzles.FirstCloset;
 
 public class RoomOne4 extends Fragment implements View.OnClickListener {
 
@@ -53,6 +60,10 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
             case (R.id.first4Right):
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne1()).addToBackStack(null).commit();
                 break;
+
+            case (R.id.first4Clock):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new FirstClock()).addToBackStack(null).commit();
+                break;
         }
     }
 
@@ -62,11 +73,33 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_room_one4, container, false);
 
-        left = (ImageButton) view.findViewById(R.id.first4Left);
-        left.setOnClickListener(this);
+        for (ObjectInfo object : objects1.get(3)) {
+            try {
+                int resID = getResId(object.name, R.id.class);
+                Object obj = (Object) view.findViewById(resID);
 
-        right = (ImageButton) view.findViewById(R.id.first4Right);
-        right.setOnClickListener(this);
+                obj.setParam(object.name, object.icon);
+                obj.setOnClickListener(this);
+
+                if (obj.name.trim().equals("first4Bird")) {
+                    if (!MainActivity.firstBird1Saw)
+                        obj.setVisibility(View.GONE);
+                }
+            }
+            catch(NullPointerException ignored) {}
+        }
+
+        for (PuzzleInfo puzzle : puzzles1.get(3)) {
+            try {
+                int resID = getResId(puzzle.name, R.id.class);
+                Puzzle puzz = (Puzzle) view.findViewById(resID);
+
+                puzz.setParam(puzzle.name, puzzle.scene, puzzle.icon);
+                puzz.setOnClickListener(this);
+
+            }
+            catch(NullPointerException ignored) {}
+        }
 
         return view;
     }

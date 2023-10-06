@@ -31,13 +31,26 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<ArrayList<PuzzleInfo>> puzzles3 = new ArrayList<>();
 
     // <<< Additional
-    public static boolean firstWindows = false;
+    public static boolean firstWindowsDone = false;
     public static boolean firstTookBook = false;
 
     public static boolean firstPlatesDone = false;
     public static boolean firstTookHourArrow = false;
 
+    public static boolean firstBooksPlaced = false;
     public static boolean firstBooksDone = false;
+
+    public static boolean firstWindowOpen = false;
+    public static boolean firstTookMinuteArrow = false;
+    public static boolean firstClosetDone = false;
+
+    public static boolean firstChestDone = false;
+
+    public static boolean firstHourArrowPlaced = false;
+    public static boolean firstMinuteArrowPlaced = false;
+
+    // <<< Birds
+    public static boolean firstBird1Saw = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +62,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException ignored) {}
 
         Button play = (Button) findViewById(R.id.menu_btn_play);
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent scene = new Intent(MainActivity.this, Scene.class);
-                startActivity(scene);
-            }
+        play.setOnClickListener(view -> {
+            Intent scene = new Intent(MainActivity.this, Scene.class);
+            startActivity(scene);
         });
     }
 

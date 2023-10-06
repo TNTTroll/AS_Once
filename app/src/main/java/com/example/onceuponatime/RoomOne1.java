@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import com.example.onceuponatime.Puzzles._PUZZLES;
 
@@ -26,7 +25,6 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
 
     View view;
 
-    ImageButton left, right, windowL, windowR;
     Object book;
 
     int[] needWindows = _PUZZLES.firstWindowsSequence;
@@ -67,13 +65,13 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
                 break;
 
             case (R.id.firstWindowL):
-                if (!MainActivity.firstWindows)
+                if (!MainActivity.firstWindowsDone)
                     usedWindows.add(1);
 
                 break;
 
             case (R.id.firstWindowR):
-                if (!MainActivity.firstWindows)
+                if (!MainActivity.firstWindowsDone)
                     usedWindows.add(2);
 
                 break;
@@ -87,9 +85,9 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
                 break;
         }
 
-        if (!MainActivity.firstWindows)
+        if (!MainActivity.firstWindowsDone)
             if (checkWindows()) {
-                MainActivity.firstWindows = true;
+                MainActivity.firstWindowsDone = true;
 
                 book.setVisibility(View.VISIBLE);
             }
@@ -102,18 +100,6 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_one1, container, false);
-
-        left = (ImageButton) view.findViewById(R.id.first1Left);
-        left.setOnClickListener(this);
-
-        right = (ImageButton) view.findViewById(R.id.first1Right);
-        right.setOnClickListener(this);
-
-        windowL = (ImageButton) view.findViewById(R.id.firstWindowL);
-        windowL.setOnClickListener(this);
-
-        windowR = (ImageButton) view.findViewById(R.id.firstWindowR);
-        windowR.setOnClickListener(this);
 
         for (ObjectInfo object : objects1.get(0)) {
             try {
@@ -130,7 +116,7 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
             catch(NullPointerException ignored) {}
         }
 
-        if (MainActivity.firstTookBook || !MainActivity.firstWindows)
+        if (MainActivity.firstTookBook || !MainActivity.firstWindowsDone)
             book.setVisibility(View.GONE);
 
         return view;
