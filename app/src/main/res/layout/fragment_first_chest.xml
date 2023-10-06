@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puzzles.FirstChest">
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChestBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/back"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChest_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="161dp"
+        android:background="@drawable/sign_1"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChest_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="199dp"
+        android:layout_marginTop="168dp"
+        android:background="@drawable/sign_4"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChest_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="297dp"
+        android:layout_marginTop="168dp"
+        android:background="@drawable/sign_7"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChest_4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="412dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/sign_10"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChest_5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="526dp"
+        android:layout_marginTop="165dp"
+        android:background="@drawable/sign_13"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChestCheck"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="297dp"
+        android:background="@drawable/plate"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChestBook"
+        android:layout_width="357dp"
+        android:layout_height="261dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="206dp"
+        android:layout_marginTop="94dp"
+        android:background="@drawable/book"
+        android:contentDescription="@string/app_name" />
+
+</RelativeLayout>

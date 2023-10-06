@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puzzles.FirstCloset">
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstClosetBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/back"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstCloset_1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="123dp"
+        android:background="@drawable/color1"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstCloset_2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="123dp"
+        android:background="@drawable/color2"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstCloset_3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="435dp"
+        android:layout_marginTop="127dp"
+        android:background="@drawable/color3"
+        android:contentDescription="@string/app_name" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstMinuteArrow"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="291dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/arrow"
+        android:contentDescription="@string/app_name" />
+
+</RelativeLayout>
