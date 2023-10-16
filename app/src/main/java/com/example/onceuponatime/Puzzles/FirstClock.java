@@ -34,7 +34,7 @@ public class FirstClock extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object hour, minute;
+    Object hour, minute, bg;
     Holder clock;
 
     public FirstClock() {
@@ -102,6 +102,9 @@ public class FirstClock extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_first_clock, container, false);
+
+        bg = (Object) view.findViewById(R.id.firstClockBG);
+        bg.setEnabled(false);
 
         for (ObjectInfo object : objects1.get(3)) {
             try {

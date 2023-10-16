@@ -27,7 +27,7 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
 
     View view;
 
-    ImageButton left, right;
+    Object bg;
 
     public RoomOne4() {
     }
@@ -72,6 +72,9 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_one4, container, false);
+
+        bg = (Object) view.findViewById(R.id.first4BG);
+        bg.setEnabled(false);
 
         for (ObjectInfo object : objects1.get(3)) {
             try {

@@ -33,7 +33,8 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object solved;
+    Object solved, bg;
+    Holder bookPlace;
 
     int activeBook = -1;
 
@@ -131,7 +132,7 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
             for (Object book : books)
                 book.setEnabled(false);
 
-            solved.setVisibility(View.VISIBLE);
+            solved.setIcon("bookcase_open");
         }
 
         Scene.reloadInventory();
@@ -142,6 +143,9 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_first_bookcase, container, false);
+
+        bg = (Object) view.findViewById(R.id.firstBookcaseBG);
+        bg.setEnabled(false);
 
         int bookPos = 0;
         for (ObjectInfo object : objects1.get(1)) {
@@ -158,11 +162,12 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
                     usedBook[bookPos] = bookPos + 1;
 
                     bookPos += 1;
+
                 } else if ( object.getName().trim().equals("firstBookSolved") ) {
                     solved = obj;
 
-                    if (!MainActivity.firstBooksDone)
-                        solved.setVisibility(View.GONE);
+                    if (MainActivity.firstBooksDone)
+                        solved.setIcon("bookcase_open");
                 }
 
             }
@@ -183,6 +188,9 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
                 if (MainActivity.firstBooksPlaced)
                     hold.setVisibility(View.GONE);
 
+                if ( holder.getName().trim().equals("firstBookPlacement") )
+                    bookPlace = hold;
+
             }
             catch(NullPointerException ignored) {}
         }
@@ -193,13 +201,16 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
     }
 
     private void redrawBooks() {
-        if (!MainActivity.firstBooksDone)
+        if (!MainActivity.firstBooksDone) {
+            bookPlace.setY(posY);
+            bookPlace.setX(posX[0]);
+
             for (int x = 0; x < books.length; x++) {
-                books[x].setY( posY );
-                books[x].setX( posX[0] + posX[1] * x  );
+                books[x].setY(posY);
+                books[x].setX(posX[0] + posX[1] * x);
             }
 
-        else
+        } else
             for (int x = 0; x < books.length; x++) {
                 books[x].setEnabled(false);
 

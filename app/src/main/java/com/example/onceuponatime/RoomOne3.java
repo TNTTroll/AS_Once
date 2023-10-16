@@ -25,6 +25,8 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
 
     View view;
 
+    Object bg;
+
     public RoomOne3() {
     }
 
@@ -61,9 +63,9 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
                 Object window = view.findViewById(R.id.first3Window);
 
                 if (MainActivity.firstWindowOpen)
-                    window.setIcon("window_close");
+                    window.setIcon("room1_window_close");
                 else
-                    window.setIcon("window_open");
+                    window.setIcon("room1_window_open");
 
                 MainActivity.firstWindowOpen = !MainActivity.firstWindowOpen;
 
@@ -85,6 +87,9 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_room_one3, container, false);
 
+        bg = (Object) view.findViewById(R.id.first3BG);
+        bg.setEnabled(false);
+
         for (ObjectInfo object : objects1.get(2)) {
             try {
                 int resID = getResId(object.name, R.id.class);
@@ -100,7 +105,7 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
                 } else if (obj.name.trim().equals("first3Window"))
                     if (MainActivity.firstWindowOpen) {
                         obj.setEnabled(false);
-                        obj.setIcon("window_open");
+                        obj.setIcon("room1_window_open");
                         MainActivity.firstBird1Saw = true;
                     }
 

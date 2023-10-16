@@ -4,6 +4,7 @@ import static com.example.onceuponatime.MainActivity.objects1;
 import static com.example.onceuponatime.MainActivity.puzzles1;
 import static com.example.onceuponatime.Scene.getResId;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.onceuponatime.Puzzles.FirstBookcase;
 import com.example.onceuponatime.Puzzles.FirstPlates;
@@ -24,6 +26,8 @@ public class RoomOne2 extends Fragment implements View.OnClickListener {
     private String mParam2;
 
     View view;
+
+    Object bg;
 
     public RoomOne2() {
     }
@@ -73,6 +77,11 @@ public class RoomOne2 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_one2, container, false);
+
+        bg = (Object) view.findViewById(R.id.first2BG);
+        bg.setEnabled(false);
+        if (MainActivity.firstPlatesDone)
+            bg.setIcon("bg_room12_2");
 
         for (ObjectInfo object : objects1.get(1)) {
             try {

@@ -25,7 +25,7 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object book;
+    Object book, bg, storage;
 
     int[] needWindows = _PUZZLES.firstWindowsSequence;
     int clicked = 0;
@@ -89,6 +89,8 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
             if (checkWindows()) {
                 MainActivity.firstWindowsDone = true;
 
+                storage.setIcon("room1_storage_open");
+
                 book.setVisibility(View.VISIBLE);
             }
 
@@ -100,6 +102,13 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_one1, container, false);
+
+        bg = (Object) view.findViewById(R.id.first1BG);
+        bg.setEnabled(false);
+
+        storage = (Object) view.findViewById(R.id.first1Closet);
+        if (MainActivity.firstWindowsDone)
+            storage.setIcon("room1_storage_open");
 
         for (ObjectInfo object : objects1.get(0)) {
             try {

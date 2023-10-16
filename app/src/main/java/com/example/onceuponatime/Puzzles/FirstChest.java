@@ -28,10 +28,13 @@ public class FirstChest extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object check, book;
+    Object check, book, bg, wall;
 
     String[] needSigns = _PUZZLES.firstChestSequence;
     Object[] signs = new Object[5];
+
+    int posX[] = _PUZZLES.firstChestPosX;
+    int posY = _PUZZLES.firstChestPosY;
 
     public FirstChest() {
     }
@@ -67,6 +70,8 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                     if (checkSigns()) {
                         MainActivity.firstChestDone = true;
 
+                        bg.setIcon("bg_chest_open");
+
                         check.setVisibility(View.GONE);
 
                         for (Object sign : signs)
@@ -92,9 +97,9 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                     int currentSign = Integer.parseInt(obj.getIcon().split("_")[1]);
 
                     if (currentSign % 3 == 0)
-                        obj.setIcon("sign_" + (currentSign - 2));
+                        obj.setIcon("symbol_" + (currentSign - 2));
                     else
-                        obj.setIcon("sign_" + (currentSign + 1));
+                        obj.setIcon("symbol_" + (currentSign + 1));
 
                     break;
                 }
@@ -107,6 +112,14 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_first_chest, container, false);
+
+        wall = (Object) view.findViewById(R.id.firstChestWallBG);
+        wall.setEnabled(false);
+
+        bg = (Object) view.findViewById(R.id.firstChestBG);
+        bg.setEnabled(false);
+        if (MainActivity.firstChestDone)
+            bg.setIcon("bg_chest_open");
 
         int signCount = 0;
         for (ObjectInfo object : objects1.get(2)) {
@@ -124,6 +137,8 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                     signs[signCount] = obj;
 
                     signCount += 1;
+
+                    setPosition(obj);
 
                 } else if ( object.getName().trim().equals("firstChestCheck") ) {
                     check = obj;
@@ -153,5 +168,12 @@ public class FirstChest extends Fragment implements View.OnClickListener {
         }
 
         return true;
+    }
+
+    private void setPosition(Object obj) {
+        for (int x = 0; x < signs.length; x++) {
+            signs[x].setY( posY );
+            signs[x].setX( posX[0] + posX[1] * x );
+        }
     }
 }

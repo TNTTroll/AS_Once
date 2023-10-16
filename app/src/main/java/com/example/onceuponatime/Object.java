@@ -4,6 +4,7 @@ import static com.example.onceuponatime.Scene.getResId;
 import static com.example.onceuponatime.Scene.inventory;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
@@ -44,8 +45,12 @@ public class Object extends androidx.appcompat.widget.AppCompatButton {
     }
 
     public void changeIcon() {
-        icon = ResourcesCompat.getDrawable(getResources(), getResId(iconName, R.drawable.class), null);
-        this.setBackground( icon );
+        if (iconName.equals("none"))
+            this.setBackgroundColor(Color.TRANSPARENT);
+        else {
+            icon = ResourcesCompat.getDrawable(getResources(), getResId(iconName, R.drawable.class), null);
+            this.setBackground( ResourcesCompat.getDrawable(getResources(), getResId(iconName, R.drawable.class), null) );
+        }
     }
 
     public void setName(String _name) {

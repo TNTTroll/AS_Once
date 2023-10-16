@@ -21,7 +21,7 @@ public class FirstChestBook extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object back;
+    Object back, wall, bg;
 
     public FirstChestBook() {
     }
@@ -58,6 +58,12 @@ public class FirstChestBook extends Fragment implements View.OnClickListener {
 
         back = (Object) view.findViewById(R.id.firstChestBookBack);
         back.setOnClickListener(this);
+
+        wall = (Object) view.findViewById(R.id.firstChestBookWallBG);
+        wall.setEnabled(false);
+
+        bg = (Object) view.findViewById(R.id.firstChestBookBG);
+        bg.setEnabled(false);
 
         return view;
     }

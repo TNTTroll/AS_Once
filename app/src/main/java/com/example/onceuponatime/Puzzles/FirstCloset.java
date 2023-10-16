@@ -30,13 +30,16 @@ public class FirstCloset extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object arrow;
+    Object arrow, bg, wall;
 
     int[] needColors = _PUZZLES.firstClosetSequence;
 
     int clicked = 0;
     ArrayList<Integer> usedColors = new ArrayList<>();
-    Object[] colors = new Object[needColors.length];
+    Object[] colors = new Object[6];
+
+    int posX[] = _PUZZLES.firstClosetPosX;
+    int posY = _PUZZLES.firstClosetPosY;
 
     public FirstCloset() {
     }
@@ -95,6 +98,11 @@ public class FirstCloset extends Fragment implements View.OnClickListener {
             if (checkColors()) {
                 MainActivity.firstClosetDone = true;
 
+                for (Object obj : colors)
+                    obj.setVisibility(View.GONE);
+
+                bg.setIcon("bg_closet_open");
+
                 arrow.setVisibility(View.VISIBLE);
             }
         }
@@ -107,6 +115,14 @@ public class FirstCloset extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_first_closet, container, false);
+
+        wall = (Object) view.findViewById(R.id.firstClosetWallBG);
+        wall.setEnabled(false);
+
+        bg = (Object) view.findViewById(R.id.firstClosetBG);
+        bg.setEnabled(false);
+        if (MainActivity.firstClosetDone)
+            bg.setIcon("bg_closet_open");
 
         int colorCount = 0;
         for (ObjectInfo object : objects1.get(2)) {
@@ -125,11 +141,13 @@ public class FirstCloset extends Fragment implements View.OnClickListener {
 
                 } else if ( object.getName().startsWith("firstCloset_") ) {
                     if (MainActivity.firstClosetDone)
-                        obj.setEnabled(false);
+                        obj.setVisibility(View.GONE);
 
                     colors[colorCount] = obj;
 
                     colorCount += 1;
+
+                    setPosition(obj);
                 }
 
             }
@@ -150,5 +168,12 @@ public class FirstCloset extends Fragment implements View.OnClickListener {
                 return false;
 
         return true;
+    }
+
+    private void setPosition(Object obj) {
+        for (int x = 0; x < colors.length; x++) {
+            colors[x].setY( posY );
+            colors[x].setX( posX[0] + posX[1] * x );
+        }
     }
 }

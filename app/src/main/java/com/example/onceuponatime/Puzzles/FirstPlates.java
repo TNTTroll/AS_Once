@@ -30,7 +30,7 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object arrow;
+    Object arrow, wall;
 
     int[] needPlate = _PUZZLES.firstPlatesSequence;
 
@@ -84,6 +84,8 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
 
                 for (Object plate : plates)
                     plate.setEnabled(false);
+
+                plates[0].setIcon("plates_1_open");
             }
 
         switch (v.getId()) {
@@ -109,6 +111,9 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_first_plates, container, false);
+
+        wall = (Object) view.findViewById(R.id.firstPlatesWallBG);
+        wall.setEnabled(false);
 
         int plateCount = 0;
         for (ObjectInfo object : objects1.get(1)) {

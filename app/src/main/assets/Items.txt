@@ -3,65 +3,70 @@
 first1Left//left
 first1Right//right
 
-firstWindowL//window
-firstWindowR//window
-firstBook//book
+firstWindowL//none
+firstWindowR//none
+firstBook//bookcase_book_1
 ^side
 
 first2Left//left
 first2Right//right
 
 firstBookcaseBack//back
-firstBook_1//book1
-firstBook_2//book2
-firstBook_3//book3
-firstBook_4//book4
-firstBook_5//book5
-firstBookSolved//black
+firstBook_1//bookcase_book_1
+firstBook_2//bookcase_book_2
+firstBook_3//bookcase_book_3
+firstBook_4//bookcase_book_4
+firstBook_5//bookcase_book_5
+firstBookSolved//bookcase_close
 
 firstPlatesBack//back
-firstHourArrow//arrow
-firstPlate_1//plate
-firstPlate_2//plate
-firstPlate_3//plate
-firstPlate_4//plate
+firstHourArrow//arrow_hour
+firstPlate_1//plates_1
+firstPlate_2//plates_2
+firstPlate_3//plates_3
+firstPlate_4//plates_4
+firstPlate_5//plates_5
 ^side
 
 first3Left//left
 first3Right//right
 
 firstClosetBack//back
-firstCloset_1//color1
-firstCloset_2//color2
-firstCloset_3//color3
-firstMinuteArrow//arrow
+firstCloset_1//closet_btn_1
+firstCloset_2//closet_btn_2
+firstCloset_3//closet_btn_3
+firstCloset_4//closet_btn_4
+firstCloset_5//closet_btn_5
+firstCloset_6//closet_btn_6
+firstMinuteArrow//arrow_minute
 
-first3Bird//bird
-first3Window//window_close
+first3Bird//bird_1
+first3Window//room1_window_close
 
 firstChestBack//back
-firstChest_1//sign_1
-firstChest_2//sign_4
-firstChest_3//sign_7
-firstChest_4//sign_10
-firstChest_5//sign_13
-firstChestCheck//plate
-firstChestBook//book
+firstChest_1//symbol_1
+firstChest_2//symbol_4
+firstChest_3//symbol_7
+firstChest_4//symbol_10
+firstChest_5//symbol_13
+firstChestCheck//chest_check
+firstChestBook//chest_book_close
 ^side
 
 first4Left//left
 first4Right//right
 
-first4Bird//bird
+first4Bird//bird_1
 
 firstClockBack//back
-firstClockHour//arrow
-firstClockMinute//arrow
+firstClockHour//arrow_hour
+firstClockMinute//arrow_minute
 ^side
 
 -holders
 ^side
-firstBookPlacement//firstBook//plate
+
+firstBookPlacement//firstBook//none
 ^side
 ^side
 
@@ -71,23 +76,34 @@ firstClockPlacement//firstHourArrow//clock_display_empty
 -puzzles
 ^side
 
-firstBookcase//FirstBookcase//bookcase
-firstPlates//FirstPlates//pnc
+firstBookcase//FirstBookcase//none
+firstPlates//FirstPlates//none
 ^side
 
-first3Closet//FirstCloset//pnc
-first3Chest//FirstChest//pnc
+first3Closet//FirstCloset//none
+first3Chest//FirstChest//none
 ^side
 
-first4Clock//FirstClock//clock
+first4Clock//FirstClock//none
 ^side
 
 
 =scene
 -objects
+second1Left//left
+second1Right//right
 ^side
+
+second2Left//left
+second2Right//right
 ^side
+
+second3Left//left
+second3Right//right
 ^side
+
+second4Left//left
+second4Right//right
 ^side
 
 -holders
@@ -105,9 +121,20 @@ first4Clock//FirstClock//clock
 
 =scene
 -objects
+third1Left//left
+third1Right//right
 ^side
+
+third2Left//left
+third2Right//right
 ^side
+
+third3Left//left
+third3Right//right
 ^side
+
+third4Left//left
+third4Right//right
 ^side
 
 -holders

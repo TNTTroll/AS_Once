@@ -38,14 +38,6 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    public void setRoomView(String room){
-        switch (room) {
-            case "1":
-                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne1()).addToBackStack(null).commit();
-                break;
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

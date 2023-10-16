@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,68 +7,88 @@
     tools:context=".Puzzles.FirstBookcase">
 
     <com.example.onceuponatime.Object
+        android:id="@+id/firstBookcaseBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_bookcase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
         android:id="@+id/firstBookcaseBack"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
         android:background="@drawable/back"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Holder
         android:id="@+id/firstBookPlacement"
-        android:layout_width="83dp"
-        android:layout_height="123dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="69dp"
-        android:background="@drawable/plate" />
+        android:layout_width="110px"
+        android:layout_height="335px"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBook_1"
-        android:layout_width="83dp"
-        android:layout_height="123dp"
-        android:background="@drawable/book1" />
+        android:layout_width="110px"
+        android:layout_height="335px"
+        android:background="@drawable/bookcase_book_1"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBook_2"
-        android:layout_width="83dp"
-        android:layout_height="123dp"
-        android:background="@drawable/book2" />
+        android:layout_width="110px"
+        android:layout_height="335px"
+        android:background="@drawable/bookcase_book_2"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBook_3"
-        android:layout_width="83dp"
-        android:layout_height="123dp"
-        android:background="@drawable/book3" />
+        android:layout_width="110px"
+        android:layout_height="335px"
+        android:background="@drawable/bookcase_book_3"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBook_4"
-        android:layout_width="83dp"
-        android:layout_height="123dp"
-        android:background="@drawable/book4" />
+        android:layout_width="110px"
+        android:layout_height="335px"
+        android:background="@drawable/bookcase_book_4"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBook_5"
-        android:layout_width="83dp"
-        android:layout_height="123dp"
-        android:background="@drawable/book5" />
+        android:layout_width="110px"
+        android:layout_height="335px"
+        android:background="@drawable/bookcase_book_5"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstBookSolved"
-        android:layout_width="wrap_content"
-        android:layout_height="137dp"
+        android:layout_width="1013px"
+        android:layout_height="223px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="279dp"
-        android:layout_marginTop="190dp"
-        android:layout_marginEnd="297dp"
-        android:layout_marginBottom="33dp"
-        android:background="@drawable/black" />
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/bookcase_close"
+        app:layout_constraintBottom_toBottomOf="@+id/firstBookcaseBG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

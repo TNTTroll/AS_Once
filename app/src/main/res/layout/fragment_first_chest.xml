@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Puzzles.FirstChest">
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChestWallBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstChestBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_chest_close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChestBack"
@@ -14,83 +51,90 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:background="@drawable/back"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_name"
+        tools:ignore="MissingConstraints" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChest_1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="101dp"
         android:layout_marginTop="161dp"
-        android:background="@drawable/sign_1"
+        android:background="@drawable/symbol_1"
         android:contentDescription="@string/app_name" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChest_2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="199dp"
         android:layout_marginTop="168dp"
-        android:background="@drawable/sign_4"
+        android:background="@drawable/symbol_4"
         android:contentDescription="@string/app_name" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChest_3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="297dp"
         android:layout_marginTop="168dp"
-        android:background="@drawable/sign_7"
+        android:background="@drawable/symbol_7"
         android:contentDescription="@string/app_name" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChest_4"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="412dp"
         android:layout_marginTop="160dp"
-        android:background="@drawable/sign_10"
+        android:background="@drawable/symbol_10"
         android:contentDescription="@string/app_name" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChest_5"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="526dp"
         android:layout_marginTop="165dp"
-        android:background="@drawable/sign_13"
+        android:background="@drawable/symbol_13"
         android:contentDescription="@string/app_name" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChestCheck"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="372px"
+        android:layout_height="97px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="297dp"
-        android:background="@drawable/plate"
-        android:contentDescription="@string/app_name" />
+        android:layout_marginTop="350dp"
+        android:background="@drawable/chest_check"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstChestBook"
-        android:layout_width="357dp"
-        android:layout_height="261dp"
+        android:layout_width="930px"
+        android:layout_height="570px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="206dp"
-        android:layout_marginTop="94dp"
-        android:background="@drawable/book"
-        android:contentDescription="@string/app_name" />
+        android:background="@drawable/chest_book_close"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

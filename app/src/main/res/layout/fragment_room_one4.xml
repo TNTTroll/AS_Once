@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +8,34 @@
     tools:ignore="MissingDefaultResource">
 
     <com.example.onceuponatime.Object
+        android:id="@+id/first4BG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_room14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.onceuponatime.Object
         android:id="@+id/first4Left"
         android:layout_width="63dp"
         android:layout_height="73dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="160dp"
         android:adjustViewBounds="true"
         android:background="@drawable/left"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/first4Right"
@@ -28,52 +44,36 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="160dp"
         android:adjustViewBounds="true"
+        android:background="@drawable/right"
         android:scaleType="fitCenter"
-        android:background="@drawable/right" />
-
-    <ImageButton
-        android:id="@+id/first4Tree"
-        android:layout_width="246dp"
-        android:layout_height="284dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="73dp"
-        android:background="@drawable/tree" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/first4Bird"
-        android:layout_width="98dp"
-        android:layout_height="85dp"
+        android:layout_width="175px"
+        android:layout_height="120px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="178dp"
-        android:layout_marginTop="191dp"
-        android:background="@drawable/bird" />
-
-    <ImageButton
-        android:id="@+id/first4Door"
-        android:layout_width="144dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/door" />
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="145dp"
+        android:background="@drawable/bird_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/first4Clock"
-        android:layout_width="154dp"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="354dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="514dp"
-        android:layout_marginTop="66dp"
-        android:background="@drawable/clock" />
+        android:layout_marginEnd="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,49 +7,6 @@
     tools:context=".Puzzles.FirstClock">
 
     <com.example.onceuponatime.Object
-        android:id="@+id/firstClockBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/back"
-        android:contentDescription="@string/app_name" />
-
-    <com.example.onceuponatime.Holder
-        android:id="@+id/firstClockPlacement"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="206dp"
-        android:layout_marginTop="27dp"
-        android:background="@drawable/clock_display_empty" />
-
-    <com.example.onceuponatime.Object
-        android:id="@+id/firstClockHour"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="354dp"
-        android:layout_marginTop="106dp"
-        android:background="@drawable/arrow"
-        android:contentDescription="@string/app_name" />
-
-    <com.example.onceuponatime.Object
-        android:id="@+id/firstClockMinute"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="282dp"
-        android:layout_marginTop="142dp"
-        android:background="@drawable/arrow"
-        android:contentDescription="@string/app_name" />
-
-    <ImageButton
         android:id="@+id/firstClockBG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,10 +14,67 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="@drawable/clock_display_empty" />
+        android:background="@drawable/bg_clock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstClockBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/back"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Holder
+        android:id="@+id/firstClockPlacement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/clock_display_empty"
+        app:layout_constraintBottom_toBottomOf="@+id/firstClockBG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/firstClockBG" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstClockHour"
+        android:layout_width="70px"
+        android:layout_height="250px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/arrow_hour"
+        android:contentDescription="@string/app_name"
+        android:rotation="30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/firstClockMinute"
+        android:layout_width="70px"
+        android:layout_height="250px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="64dp"
+        android:rotation="0"
+        android:background="@drawable/arrow_minute"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
