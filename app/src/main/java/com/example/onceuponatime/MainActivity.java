@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         clear.setVisibility(View.GONE);
         clear.setOnClickListener(view -> {
             setLevel(1);
-            player.setParam(player.getName(), 1);
+
             Toast.makeText(getApplicationContext(), "Your progress has been deleted", Toast.LENGTH_LONG).show();
 
             clear.setText("Done");
@@ -305,6 +305,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (FileNotFoundException ignored) {}
 
         try {
+            player.setParam(player.getName(), level);
+
             assert outputStream != null;
             String playerInfo = player.getName() + "&" + level + '\n';
             outputStream.write(playerInfo.getBytes());

@@ -59,8 +59,11 @@ first4Right//right
 first4Bird//bird_1
 
 firstClockBack//back
+firstClockNewTime//plate
 firstClockHour//arrow_hour
 firstClockMinute//arrow_minute
+firstClockBtnHour//plate
+firstClockBtnMinute//plate
 ^side
 
 -holders

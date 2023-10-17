@@ -57,7 +57,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="72dp"
         android:layout_marginTop="76dp"
-        android:background="@drawable/pnc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,7 +67,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="104dp"
-        android:background="@drawable/bookcase"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -2,6 +2,7 @@ package com.example.onceuponatime.Puzzles;
 
 import static com.example.onceuponatime.MainActivity.holders1;
 import static com.example.onceuponatime.MainActivity.objects1;
+import static com.example.onceuponatime.MainActivity.setLevel;
 import static com.example.onceuponatime.Scene.current_Item;
 import static com.example.onceuponatime.Scene.getResId;
 import static com.example.onceuponatime.Scene.inventory;
@@ -14,14 +15,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.onceuponatime.Acception;
 import com.example.onceuponatime.Holder;
 import com.example.onceuponatime.HolderInfo;
 import com.example.onceuponatime.MainActivity;
 import com.example.onceuponatime.Object;
 import com.example.onceuponatime.ObjectInfo;
 import com.example.onceuponatime.R;
+import com.example.onceuponatime.RoomOne1;
 import com.example.onceuponatime.RoomOne4;
+import com.example.onceuponatime.RoomTwo4;
 import com.example.onceuponatime.Scene;
 
 public class FirstClock extends Fragment implements View.OnClickListener {
@@ -34,8 +39,10 @@ public class FirstClock extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object hour, minute, bg;
+    Object hour, minute, bg, btnH, btnM, back, time;
     Holder clock;
+
+    int[] arrowRotation = {1, 0};
 
     public FirstClock() {
     }
@@ -90,9 +97,36 @@ public class FirstClock extends Fragment implements View.OnClickListener {
                     clock.setVisibility(View.GONE);
                     hour.setVisibility(View.VISIBLE);
                     minute.setVisibility(View.VISIBLE);
+
+                    btnH.setEnabled(true);
+                    btnM.setEnabled(true);
                 }
 
                 break;
+
+            case (R.id.firstClockBtnHour):
+                hour.setRotation((arrowRotation[0] + 1) * 30);
+                arrowRotation[0] = (arrowRotation[0] + 1) % 12;
+
+                break;
+
+            case (R.id.firstClockBtnMinute):
+                minute.setRotation((arrowRotation[1] + 1) * 30);
+                arrowRotation[1] = (arrowRotation[1] + 1) % 12;
+
+                break;
+
+            case (R.id.firstClockNewTime):
+                new Acception().show(getParentFragmentManager(), "acceptation");
+                break;
+        }
+
+        if ( _PUZZLES.firstTime[0] == arrowRotation[0] && _PUZZLES.firstTime[1] == arrowRotation[1] ) {
+            btnH.setEnabled(false);
+            btnM.setEnabled(false);
+
+            time.setVisibility(View.VISIBLE);
+            back.setVisibility(View.GONE);
         }
 
         Scene.reloadInventory();
@@ -125,6 +159,17 @@ public class FirstClock extends Fragment implements View.OnClickListener {
 
                     if (!MainActivity.firstMinuteArrowPlaced)
                         obj.setVisibility(View.GONE);
+
+                } else if ( object.getName().trim().equals("firstClockBtnHour") )
+                    btnH = obj;
+                else if ( object.getName().trim().equals("firstClockBtnMinute") )
+                    btnM = obj;
+                else if ( object.getName().trim().equals("firstClockBack")  )
+                    back = obj;
+                else if ( object.getName().trim().equals("firstClockNewTime")  ) {
+                    time = obj;
+                    back.setVisibility(View.GONE);
+                    //time.setVisibility(View.GONE);
                 }
 
             }
@@ -144,6 +189,10 @@ public class FirstClock extends Fragment implements View.OnClickListener {
 
                     if (MainActivity.firstHourArrowPlaced && MainActivity.firstMinuteArrowPlaced)
                         hold.setVisibility(View.GONE);
+                    else {
+                        btnH.setEnabled(false);
+                        btnM.setEnabled(false);
+                    }
                 }
 
             }

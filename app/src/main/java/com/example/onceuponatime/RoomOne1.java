@@ -1,6 +1,7 @@
 package com.example.onceuponatime;
 
 import static com.example.onceuponatime.MainActivity.objects1;
+import static com.example.onceuponatime.MainActivity.setLevel;
 import static com.example.onceuponatime.Scene.getResId;
 
 import android.os.Bundle;

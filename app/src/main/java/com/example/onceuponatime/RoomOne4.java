@@ -2,6 +2,7 @@ package com.example.onceuponatime;
 
 import static com.example.onceuponatime.MainActivity.objects1;
 import static com.example.onceuponatime.MainActivity.puzzles1;
+import static com.example.onceuponatime.MainActivity.setLevel;
 import static com.example.onceuponatime.Scene.getResId;
 
 import android.os.Bundle;
@@ -72,6 +73,8 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_one4, container, false);
+
+        setLevel(1);
 
         bg = (Object) view.findViewById(R.id.first4BG);
         bg.setEnabled(false);

@@ -1,5 +1,6 @@
 package com.example.onceuponatime;
 
+import static com.example.onceuponatime.MainActivity.player;
 import static com.example.onceuponatime.MainActivity.puzzles1;
 import static com.example.onceuponatime.MainActivity.puzzles2;
 import static com.example.onceuponatime.MainActivity.puzzles3;
@@ -44,6 +45,20 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_scene);
 
         roomView = (View) findViewById(R.id.roomView);
+
+        switch (player.getLevel()) {
+            case 1:
+                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne4()).commit();
+                break;
+
+            case 2:
+                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo4()).commit();
+                break;
+
+            case 3:
+                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree4()).commit();
+                break;
+        }
 
         for (int x = 0; x < btn_invs.length; x++) {
             int resID = getResId("inv_" + (x+1), R.id.class);
