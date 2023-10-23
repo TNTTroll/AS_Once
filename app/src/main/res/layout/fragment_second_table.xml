@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puzzles.SecondTable">
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableWallBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/back"
+        android:contentDescription="@string/app_name"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableLocker_1"
+        android:layout_width="101dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="308dp"
+        android:background="@drawable/black"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableLocker_2"
+        android:layout_width="101dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/black"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="@+id/secondTableLocker_1"
+        app:layout_constraintTop_toBottomOf="@+id/secondTableLocker_1"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableLocker_3"
+        android:layout_width="101dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/black"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="@+id/secondTableLocker_2"
+        app:layout_constraintTop_toBottomOf="@+id/secondTableLocker_2"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTablePin_1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="320dp"
+        android:background="@drawable/pin_1"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTablePin_2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="320dp"
+        android:background="@drawable/pin_2"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTablePin_3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="320dp"
+        android:background="@drawable/pin_3"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableImages_1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/no"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableImages_2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/no"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/secondTableImages_1"
+        app:layout_constraintTop_toTopOf="@+id/secondTableImages_1"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableImages_3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/no"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/secondTableImages_1"
+        app:layout_constraintTop_toBottomOf="@+id/secondTableImages_1"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableImages_4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/no"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/secondTableImages_3"
+        app:layout_constraintTop_toBottomOf="@+id/secondTableImages_2"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableImages_5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/no"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/secondTableImages_3"
+        app:layout_constraintTop_toBottomOf="@+id/secondTableImages_3"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/secondTableHammer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="228dp"
+        android:background="@drawable/hammer"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,5 +19,7 @@ public class HolderInfo {
 
     public String getIcon() { return icon; }
 
+    public boolean getUsed() { return used; }
+
     public void setUsed(boolean _used) { used = _used; }
 }

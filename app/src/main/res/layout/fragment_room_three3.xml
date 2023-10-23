@@ -7,6 +7,24 @@
     tools:context=".RoomThree3">
 
     <com.example.onceuponatime.Object
+        android:id="@+id/third3BG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
         android:id="@+id/third3Left"
         android:layout_width="63dp"
         android:layout_height="73dp"
@@ -34,14 +52,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/third3Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Three. Wall 3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <com.example.onceuponatime.Object
+        android:id="@+id/third3Window"
+        android:layout_width="730px"
+        android:layout_height="675px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/room1_window_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/third3Bird"
+        android:layout_width="175px"
+        android:layout_height="120px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bird_3"
+        app:layout_constraintBottom_toBottomOf="@+id/third3Window"
+        app:layout_constraintEnd_toEndOf="@+id/third3Window" />
+
+    <com.example.onceuponatime.Puzzle
+        android:id="@+id/third3Paint"
+        android:layout_width="350dp"
+        android:layout_height="382dp"
+        android:layout_marginEnd="172dp"
+        android:background="@drawable/pnc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

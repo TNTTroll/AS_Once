@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Ending">
 
+    <ImageButton
+        android:id="@+id/endBG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D9B282"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/endText"
         android:layout_width="268dp"
@@ -18,14 +28,14 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/endBack"
-        android:layout_width="137dp"
-        android:layout_height="50dp"
+        android:layout_width="141dp"
+        android:layout_height="117dp"
         android:background="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
+        app:layout_constraintVertical_bias="0.962" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/endAchievements"

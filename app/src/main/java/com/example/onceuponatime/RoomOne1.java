@@ -1,9 +1,10 @@
 package com.example.onceuponatime;
 
 import static com.example.onceuponatime.MainActivity.objects1;
-import static com.example.onceuponatime.MainActivity.setLevel;
 import static com.example.onceuponatime.Scene.getResId;
+import static com.example.onceuponatime.Scene.showText;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -31,6 +32,8 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
     int[] needWindows = _PUZZLES.firstWindowsSequence;
     int clicked = 0;
     ArrayList<Integer> usedWindows = new ArrayList<>();
+
+    MediaPlayer mediaPlayer;
 
     public RoomOne1() {
     }

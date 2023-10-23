@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puzzles.ThirdPaint">
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaintBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaintBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/back"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_1"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_2"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_1"
+        app:layout_constraintTop_toTopOf="@+id/thirdPaint_1" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_3"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_2"
+        app:layout_constraintTop_toTopOf="@+id/thirdPaint_2" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_4"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_3"
+        app:layout_constraintTop_toTopOf="@+id/thirdPaint_3" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_5"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/thirdPaint_1"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_1" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_6"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_5"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_2" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_7"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_6"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_3" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_8"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_7"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_4" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_9"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/thirdPaint_5"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_5" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_10"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_9"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_6" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_11"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_10"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_7" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_12"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_11"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_8" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_13"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/thirdPaint_9"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_9" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_14"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_13"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_10" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_15"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_14"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_11" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdPaint_16"
+        android:layout_width="168px"
+        android:layout_height="168px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crystal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/thirdPaint_15"
+        app:layout_constraintTop_toBottomOf="@+id/thirdPaint_12" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdMinuteArrow"
+        android:layout_width="269dp"
+        android:layout_height="258dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="864dp"
+        android:layout_marginTop="252dp"
+        android:background="@drawable/arrow_minute"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

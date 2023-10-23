@@ -4,7 +4,7 @@ public class _PUZZLES {
     // <<< PLAYER
     public static int[] registrationAnswers = {12, 100, 10};
 
-    public static String[] achievements = {"first", "second", "third"};
+    public static String[] achievements = {"book", "second", "third"};
 
     // <<< FIRST
     public static int[] firstTime = {2, 3};
@@ -25,4 +25,13 @@ public class _PUZZLES {
     public static int firstChestPosY = 420;
 
     public static String[] firstChestSequence = {"symbol_3", "symbol_5", "symbol_9", "symbol_11", "symbol_13"};
+
+    // <<< SECOND
+    public static int[] secondTime = {2, 3};
+
+    public static int[] secondTableLockersSequence = {1, 3, 2};
+    public static int[] secondTableImagesSequence = {1, 3, 5, 2, 4};
+
+    // <<< LORE
+    public static String[] lore = {"Hello"};
 }

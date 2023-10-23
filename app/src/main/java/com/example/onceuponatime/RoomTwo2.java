@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.onceuponatime.Puzzles.SecondDesk;
+import com.example.onceuponatime.Puzzles.SecondPiano;
+
 public class RoomTwo2 extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
@@ -52,6 +55,14 @@ public class RoomTwo2 extends Fragment implements View.OnClickListener {
             case (R.id.second2Right):
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo3()).addToBackStack(null).commit();
                 break;
+
+            case (R.id.second2Piano):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new SecondPiano()).addToBackStack(null).commit();
+                break;
+
+            case (R.id.second2Desk):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new SecondDesk()).addToBackStack(null).commit();
+                break;
         }
 
     }
@@ -61,6 +72,9 @@ public class RoomTwo2 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_two2, container, false);
+
+        Object bg = (Object) view.findViewById(R.id.second2BG);
+        bg.setEnabled(false);
 
         for (ObjectInfo object : objects2.get(1)) {
             try {

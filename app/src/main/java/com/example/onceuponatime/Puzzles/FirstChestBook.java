@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.onceuponatime.MainActivity;
 import com.example.onceuponatime.Object;
 import com.example.onceuponatime.R;
 
@@ -55,6 +56,8 @@ public class FirstChestBook extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_first_chest_book, container, false);
+
+        MainActivity.setAchievement(_PUZZLES.achievements[0]);
 
         back = (Object) view.findViewById(R.id.firstChestBookBack);
         back.setOnClickListener(this);

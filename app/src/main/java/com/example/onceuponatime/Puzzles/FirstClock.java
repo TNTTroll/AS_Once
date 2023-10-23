@@ -74,7 +74,7 @@ public class FirstClock extends Fragment implements View.OnClickListener {
 
             case (R.id.firstClockPlacement):
 
-                if (current_Item != -1) {
+                if (current_Item != -1 && inventory[current_Item] != null) {
                     if ( inventory[current_Item].getName().trim().equals("firstHourArrow") ) {
                         inventory[current_Item] = null;
                         current_Item = -1;
@@ -168,8 +168,7 @@ public class FirstClock extends Fragment implements View.OnClickListener {
                     back = obj;
                 else if ( object.getName().trim().equals("firstClockNewTime")  ) {
                     time = obj;
-                    back.setVisibility(View.GONE);
-                    //time.setVisibility(View.GONE);
+                    time.setVisibility(View.GONE);
                 }
 
             }

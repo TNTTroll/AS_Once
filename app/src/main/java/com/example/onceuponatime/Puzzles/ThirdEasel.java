@@ -1,0 +1,192 @@
+package com.example.onceuponatime.Puzzles;
+
+import static com.example.onceuponatime.MainActivity.holders3;
+import static com.example.onceuponatime.MainActivity.objects3;
+import static com.example.onceuponatime.Scene.current_Item;
+import static com.example.onceuponatime.Scene.getResId;
+import static com.example.onceuponatime.Scene.inventory;
+
+import android.graphics.Point;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.onceuponatime.Holder;
+import com.example.onceuponatime.HolderInfo;
+import com.example.onceuponatime.MainActivity;
+import com.example.onceuponatime.Object;
+import com.example.onceuponatime.ObjectInfo;
+import com.example.onceuponatime.R;
+import com.example.onceuponatime.RoomThree2;
+import com.example.onceuponatime.RoomThree4;
+import com.example.onceuponatime.Scene;
+
+import java.util.Arrays;
+
+public class ThirdEasel extends Fragment implements View.OnClickListener {
+
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    private String mParam1;
+    private String mParam2;
+
+    View view;
+
+    Object bg;
+
+    Holder palette;
+
+    Object[] pixels = new Object[28];
+    boolean[] pixelColored = new boolean[pixels.length];
+
+    String needCup = "thirdCups_1";
+    int needTap = 1;
+
+    public ThirdEasel() {
+    }
+
+    public static ThirdEasel newInstance(String param1, String param2) {
+        ThirdEasel fragment = new ThirdEasel();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case (R.id.thirdEaselBack):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree2()).addToBackStack(null).commit();
+                break;
+
+            case (R.id.thirdEaselPalette):
+                if (current_Item != -1 && inventory[current_Item] != null) {
+
+                    if ( inventory[current_Item].getName().trim().equals(needCup) && MainActivity.thirdCupsTookTap == needTap ) {
+                        MainActivity.thirdEaselPaletteDone = true;
+
+                        palette.setVisibility(View.GONE);
+
+                        for (Object pixel : pixels)
+                            pixel.setVisibility(View.VISIBLE);
+                    }
+
+                    Arrays.fill(MainActivity.thirdCupsTook, false);
+
+                    inventory[current_Item] = null;
+                    current_Item = -1;
+
+                    MainActivity.thirdCupsTookTap = -1;
+                }
+
+                break;
+        }
+
+        if (MainActivity.thirdEaselPaletteDone)
+            for (int index = 1; index <= pixels.length; index++) {
+                int resID = getResId("thirdEasel_" + index, R.id.class);
+
+                if (resID == v.getId()) {
+                    Object pixel = (Object) view.findViewById(resID);
+
+                    if (pixelColored[index - 1])
+                        pixel.setIcon("no");
+                    else
+                        pixel.setIcon("yes");
+
+                    pixelColored[index - 1] = !pixelColored[index - 1];
+
+                    break;
+                }
+            }
+
+        Scene.reloadInventory();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_third_easel, container, false);
+
+        Object wall = (Object) view.findViewById(R.id.thirdEaselWallBG);
+        wall.setEnabled(false);
+
+        bg = (Object) view.findViewById(R.id.thirdEaselBG);
+        bg.setEnabled(false);
+
+        Object back = (Object) view.findViewById(R.id.thirdEaselBack);
+        back.setOnClickListener(this);
+
+        for (int index = 1; index <= pixels.length; index++) {
+            try {
+                int resID = getResId("thirdEasel_" + index, R.id.class);
+                Object obj = (Object) view.findViewById(resID);
+
+                obj.setParam("thirdEasel_" + index, "no");
+                obj.setOnClickListener(this);
+
+                if ( obj.getName().trim().startsWith("thirdEasel_")  ) {
+
+                    if (!MainActivity.thirdEaselPaletteDone || MainActivity.thirdEaselDone)
+                        obj.setVisibility(View.GONE);
+
+                    pixels[index - 1] = obj;
+                }
+
+                setPosition(obj);
+
+            }
+            catch(NullPointerException ignored) {}
+        }
+
+        for (HolderInfo holder : holders3.get(1)) {
+            try {
+                int resID = getResId(holder.getName(), R.id.class);
+                Holder hold = (Holder) view.findViewById(resID);
+
+                hold.setParam(holder.getName(), holder.getNeed(), holder.getIcon());
+                hold.setOnClickListener(this);
+
+                if (hold.getName().trim().equals("thirdEaselPalette")) {
+                    palette = hold;
+
+                    if (MainActivity.thirdEaselPaletteDone)
+                        hold.setVisibility(View.GONE);
+                }
+            }
+            catch(NullPointerException ignored) {}
+        }
+
+        return view;
+    }
+
+    private void setPosition(Object obj) {
+
+        Point size = new Point();
+        MainActivity.display.getSize(size);
+
+        double width = size.x * 0.433;
+        double height = size.y * 0.2;
+
+        obj.setX( (int) width );
+        obj.setY( (int) height );
+    }
+}

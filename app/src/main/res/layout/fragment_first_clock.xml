@@ -50,15 +50,15 @@
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/plate"
+        android:background="@drawable/back"
         android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstClockHour"
-        android:layout_width="70px"
-        android:layout_height="250px"
+        android:layout_width="505px"
+        android:layout_height="505px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/arrow_hour"
@@ -66,27 +66,26 @@
         android:rotation="30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstClockMinute"
-        android:layout_width="70px"
-        android:layout_height="250px"
+        android:layout_width="505px"
+        android:layout_height="505px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="64dp"
         android:rotation="0"
         android:background="@drawable/arrow_minute"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/firstClockBtnHour"

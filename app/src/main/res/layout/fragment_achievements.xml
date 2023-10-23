@@ -17,25 +17,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
-        android:id="@+id/ach_first"
+        android:id="@+id/ach_book"
         android:layout_width="115dp"
         android:layout_height="134dp"
         android:background="@drawable/pnc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
-
-    <com.example.onceuponatime.Object
-        android:id="@+id/ach_third"
-        android:layout_width="115dp"
-        android:layout_height="134dp"
-        android:background="@drawable/pnc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
@@ -48,6 +36,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/ach_third"
+        android:layout_width="115dp"
+        android:layout_height="134dp"
+        android:background="@drawable/pnc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />

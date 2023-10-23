@@ -74,7 +74,24 @@ public class Acception extends DialogFragment implements View.OnClickListener {
         yes.setOnClickListener(this);
 
         ImageButton no = (ImageButton) view.findViewById(R.id.acceptBtnNo);
-        no.setOnClickListener(v -> dismiss());
+        no.setOnClickListener(v -> {
+
+            switch (player.getLevel()) {
+                case 1:
+                    getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne4()).commit();
+                    break;
+
+                case 2:
+                    getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo4()).commit();
+                    break;
+
+                case 3:
+                    getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree4()).commit();
+                    break;
+            }
+
+            dismiss();
+        });
 
         return view;
     }

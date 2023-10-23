@@ -88,7 +88,7 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
                 obj.setOnClickListener(this);
 
                 if (obj.name.trim().equals("first4Bird")) {
-                    if (!MainActivity.firstBird1Saw)
+                    if (MainActivity.birds[0] == 0)
                         obj.setVisibility(View.GONE);
                 }
             }

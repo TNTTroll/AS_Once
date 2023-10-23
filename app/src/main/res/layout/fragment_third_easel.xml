@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puzzles.ThirdEasel">
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEaselWallBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEaselBG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_wall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEaselBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Holder
+        android:id="@+id/thirdEaselPalette"
+        android:layout_width="354dp"
+        android:layout_height="346dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/plate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_1"
+        app:layout_constraintTop_toTopOf="@+id/thirdEasel_1" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_2"
+        app:layout_constraintTop_toTopOf="@+id/thirdEasel_2" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_3"
+        app:layout_constraintTop_toTopOf="@+id/thirdEasel_3" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_4"
+        app:layout_constraintTop_toTopOf="@+id/thirdEasel_4" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_5"
+        app:layout_constraintTop_toTopOf="@+id/thirdEasel_5" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_7"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_6"
+        app:layout_constraintTop_toTopOf="@+id/thirdEasel_6" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_8"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toStartOf="@+id/thirdEasel_1"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_1" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_9"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_8"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_2" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_10"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_9"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_3" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_11"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_10"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_4" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_12"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_11"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_5" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_13"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_12"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_6" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_14"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_13"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_7" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_15"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toStartOf="@+id/thirdEasel_8"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_8" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_16"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_15"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_9" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_17"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_16"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_10" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_18"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_17"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_11" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_19"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_18"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_12" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_20"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_19"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_13" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_21"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_20"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_14" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_22"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toStartOf="@+id/thirdEasel_15"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_15" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_23"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_22"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_16" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_24"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_23"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_17" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_25"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_24"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_18" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_26"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_25"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_19" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_27"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_26"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_20" />
+
+    <com.example.onceuponatime.Object
+        android:id="@+id/thirdEasel_28"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no"
+        app:layout_constraintStart_toEndOf="@+id/thirdEasel_27"
+        app:layout_constraintTop_toBottomOf="@+id/thirdEasel_21" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

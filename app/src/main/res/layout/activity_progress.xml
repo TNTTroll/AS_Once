@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Progress">
 
+    <ImageButton
+        android:id="@+id/progressBG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D9B282"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/progressText"
         android:layout_width="156dp"
@@ -34,8 +44,8 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/progressBack"
-        android:layout_width="137dp"
-        android:layout_height="50dp"
+        android:layout_width="135dp"
+        android:layout_height="111dp"
         android:background="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

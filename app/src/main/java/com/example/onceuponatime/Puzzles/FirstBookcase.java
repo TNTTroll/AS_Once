@@ -111,7 +111,7 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
             if (resID == v.getId()) {
                 Holder hold = (Holder) view.findViewById(resID);
 
-                if (current_Item != -1)
+                if (current_Item != -1 && inventory[current_Item] != null)
                     if (hold.setItem(inventory[current_Item])) {
                         inventory[current_Item] = null;
                         current_Item = -1;

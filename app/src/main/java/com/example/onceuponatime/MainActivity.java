@@ -1,5 +1,7 @@
 package com.example.onceuponatime;
 
+import static com.example.onceuponatime.Scene.getResId;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -7,10 +9,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.onceuponatime.Puzzles._PUZZLES;
@@ -29,30 +36,29 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    // MainActivity.setLevel(lvl);
+    // MainActivity.setAchievement(_PUZZLES.achievements[index]);
+    // MainActivity.playAudio("song");
+    // Scene.showText(_PUZZLES.lore[index]);
+
     // <<< Savings
     public static final String saveFile = "Player.txt";
     public static Player player = new Player();
 
-    private Dialog dialog_player;
+    private Dialog dialog_player, dialog_lvl, dialog_tutorial;
 
     public static MainActivity thisContext;
 
-    // <<< Scene 1
+    public static Display display;
+
+    // <<< Birds
+    public static int[] birds = new int[3];
+
+    // <<< FIRST
     public static ArrayList<ArrayList<HolderInfo>> holders1 = new ArrayList<>();
     public static ArrayList<ArrayList<ObjectInfo>> objects1 = new ArrayList<>();
     public static ArrayList<ArrayList<PuzzleInfo>> puzzles1 = new ArrayList<>();
 
-    // <<< Scene 2
-    public static ArrayList<ArrayList<HolderInfo>> holders2 = new ArrayList<>();
-    public static ArrayList<ArrayList<ObjectInfo>> objects2 = new ArrayList<>();
-    public static ArrayList<ArrayList<PuzzleInfo>> puzzles2 = new ArrayList<>();
-
-    // <<< Scene 3
-    public static ArrayList<ArrayList<HolderInfo>> holders3 = new ArrayList<>();
-    public static ArrayList<ArrayList<ObjectInfo>> objects3 = new ArrayList<>();
-    public static ArrayList<ArrayList<PuzzleInfo>> puzzles3 = new ArrayList<>();
-
-    // <<< Additional
     public static boolean firstWindowsDone = false;
     public static boolean firstTookBook = false;
 
@@ -71,8 +77,56 @@ public class MainActivity extends AppCompatActivity {
     public static boolean firstHourArrowPlaced = false;
     public static boolean firstMinuteArrowPlaced = false;
 
-    // <<< Birds
-    public static boolean firstBird1Saw = false;
+    // <<< SECOND
+    public static ArrayList<ArrayList<HolderInfo>> holders2 = new ArrayList<>();
+    public static ArrayList<ArrayList<ObjectInfo>> objects2 = new ArrayList<>();
+    public static ArrayList<ArrayList<PuzzleInfo>> puzzles2 = new ArrayList<>();
+
+    public static boolean[] secondWindowsOpen = new boolean[2];
+
+    public static boolean secondPianoDone = false;
+    public static boolean secondTookMinuteArrow = false;
+
+    public static boolean secondDeskDone = false;
+    public static boolean secondDeskPinsDone = false;
+    public static Object[] secondDeskPlacedPins = new Object[3];
+    public static boolean secondTookHourArrow = false;
+
+    public static boolean secondWindowOpen = false;
+    public static boolean secondTableLockersDone = false;
+    public static boolean[] secondTableTookPins = new boolean[3];
+    public static boolean secondTableImagesDone = false;
+    public static boolean secondTableTookHammer = false;
+
+    public static boolean secondHourArrowPlaced = false;
+    public static boolean secondMinuteArrowPlaced = false;
+
+    // <<< THIRD
+    public static ArrayList<ArrayList<HolderInfo>> holders3 = new ArrayList<>();
+    public static ArrayList<ArrayList<ObjectInfo>> objects3 = new ArrayList<>();
+    public static ArrayList<ArrayList<PuzzleInfo>> puzzles3 = new ArrayList<>();
+
+    public static boolean thirdClocksDone = false;
+    public static boolean thirdTookHourArrow = false;
+    public static boolean thirdTeethDone = false;
+
+    public static int thirdCupsTookTap = -1;
+    public static boolean[] thirdCupsTook = new boolean[4];
+    public static boolean thirdEaselPaletteDone = false;
+    public static boolean thirdEaselDone = false;
+
+    public static boolean thirdWindowOpen = false;
+    public static int[] thirdPaintsAngles = new int[16];
+    public static boolean thirdPaintDone = false;
+    public static boolean thirdTookMinuteArrow = false;
+
+    public static boolean[] thirdClockTookCrystal = new boolean[4];
+    public static boolean thirdDoorDone = false;
+
+    public static int thirdEnding = -1;
+
+    public static boolean thirdHourArrowPlaced = false;
+    public static boolean thirdMinuteArrowPlaced = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +135,14 @@ public class MainActivity extends AppCompatActivity {
 
         thisContext = this;
 
+        display = getWindowManager().getDefaultDisplay();
+
         dialog_player = new Dialog(this);
+        dialog_lvl = new Dialog(this);
+        dialog_tutorial = new Dialog(this);
+
+        ImageButton bg = (ImageButton) findViewById(R.id.mainBG);
+        bg.setEnabled(false);
 
         if (!loadInfo()) {
             try {
@@ -106,10 +167,35 @@ public class MainActivity extends AppCompatActivity {
             startActivity(scene);
         });
 
+        Button level = (Button) findViewById(R.id.menuBtnLevel);
+        level.setOnClickListener(view -> openLevels(findViewById(R.id.menuMain)));
+
+        Button tutorial = (Button) findViewById(R.id.menuBtnTutorial);
+        tutorial.setOnClickListener(view -> {
+            dialog_tutorial.setContentView(R.layout.fragment_tutorial);
+
+            Object back = (Object) dialog_tutorial.findViewById(R.id.tutorialBack);
+            back.setOnClickListener(v -> dialog_tutorial.dismiss());
+
+            dialog_tutorial.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog_tutorial.show();
+        });
+
         Button clear = (Button) findViewById(R.id.menuBtnClear);
         clear.setVisibility(View.GONE);
         clear.setOnClickListener(view -> {
             setLevel(1);
+
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = thisContext.openFileOutput(saveFile, Context.MODE_PRIVATE);
+
+                String playerInfo = player.getName() + "&1&000" + '\n';
+                outputStream.write(playerInfo.getBytes());
+
+                outputStream.close();
+
+            } catch (IOException ignored) {}
 
             Toast.makeText(getApplicationContext(), "Your progress has been deleted", Toast.LENGTH_LONG).show();
 
@@ -199,6 +285,46 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void openLevels(View view) {
+        dialog_lvl.setContentView(R.layout.fragment_levels);
+
+        ImageButton no = (ImageButton) dialog_lvl.findViewById(R.id.lvlNo);
+        no.setOnClickListener(v -> dialog_lvl.dismiss());
+
+        ImageButton lvl_1 = (ImageButton) dialog_lvl.findViewById(R.id.lvl_1);
+        lvl_1.setOnClickListener(v -> {
+            setLevel(1);
+
+            Intent scene = new Intent(MainActivity.thisContext, Scene.class);
+            startActivity(scene);
+
+            dialog_lvl.dismiss();
+        });
+
+        ImageButton lvl_2 = (ImageButton) dialog_lvl.findViewById(R.id.lvl_2);
+        lvl_2.setOnClickListener(v -> {
+            setLevel(2);
+
+            Intent scene = new Intent(MainActivity.thisContext, Scene.class);
+            startActivity(scene);
+
+            dialog_lvl.dismiss();
+        });
+
+        ImageButton lvl_3 = (ImageButton) dialog_lvl.findViewById(R.id.lvl_3);
+        lvl_3.setOnClickListener(v -> {
+            setLevel(3);
+
+            Intent scene = new Intent(MainActivity.thisContext, Scene.class);
+            startActivity(scene);
+
+            dialog_lvl.dismiss();
+        });
+
+        dialog_lvl.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog_lvl.show();
+    }
+
     private void openRegistration(View view) throws IOException {
         dialog_player.setContentView(R.layout.fragment_registration);
 
@@ -236,7 +362,7 @@ public class MainActivity extends AppCompatActivity {
 
                         player.setParam(playerInfo, 1 );
 
-                        playerInfo = playerInfo + "&1" + '\n';
+                        playerInfo = playerInfo + "&1&000" + '\n';
                         outputStream.write(playerInfo.getBytes());
 
                         outputStream.close();
@@ -249,6 +375,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        dialog_player.setCanceledOnTouchOutside(false);
         dialog_player.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog_player.show();
     }
@@ -265,6 +392,9 @@ public class MainActivity extends AppCompatActivity {
 
             player.setParam(information_Player[0], Integer.parseInt(information_Player[1]) );
 
+            for (int index = 0; index < 3; index++)
+                birds[index] = Integer.parseInt("" + information_Player[2].charAt(index));
+
             inputS.close();
 
             return information_Player[0].length() != 0;
@@ -276,7 +406,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // MainActivity.setLevel(lvl);
     public static void setLevel(int level) {
 
         List<String> playerAchievements = new ArrayList<String>();
@@ -308,7 +437,7 @@ public class MainActivity extends AppCompatActivity {
             player.setParam(player.getName(), level);
 
             assert outputStream != null;
-            String playerInfo = player.getName() + "&" + level + '\n';
+            String playerInfo = player.getName() + "&" + level + "&" + birds[0] + birds[1] + birds[2] + '\n';
             outputStream.write(playerInfo.getBytes());
 
             for (String str : playerAchievements)
@@ -343,7 +472,6 @@ public class MainActivity extends AppCompatActivity {
         return playerAchievements.contains(achieve.trim());
     }
 
-    // MainActivity.setAchievement(_PUZZLES.achievements[index]);
     public static void setAchievement(String achieve) {
 
         List<String> playerAchievements = new ArrayList<String>();
@@ -385,5 +513,10 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException ignored) {}
 
         }
+    }
+
+    public static void playAudio(String audio) {
+        MediaPlayer music = MediaPlayer.create(thisContext, getResId(audio, R.raw.class));
+        music.start();
     }
 }

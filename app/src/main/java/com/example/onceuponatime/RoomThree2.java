@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.onceuponatime.Puzzles.ThirdCups;
+import com.example.onceuponatime.Puzzles.ThirdEasel;
+
 public class RoomThree2 extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
@@ -52,6 +55,14 @@ public class RoomThree2 extends Fragment implements View.OnClickListener {
             case (R.id.third2Right):
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree3()).addToBackStack(null).commit();
                 break;
+
+            case (R.id.third2Cups):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new ThirdCups()).addToBackStack(null).commit();
+                break;
+
+            case (R.id.third2Easel):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new ThirdEasel()).addToBackStack(null).commit();
+                break;
         }
 
     }
@@ -61,6 +72,9 @@ public class RoomThree2 extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_room_three2, container, false);
+
+        Object bg = (Object) view.findViewById(R.id.third2BG);
+        bg.setEnabled(false);
 
         for (ObjectInfo object : objects3.get(1)) {
             try {

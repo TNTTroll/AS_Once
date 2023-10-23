@@ -39,6 +39,10 @@ public class Holder extends androidx.appcompat.widget.AppCompatButton {
             this.setBackground( ResourcesCompat.getDrawable(getResources(), getResId(_icon, R.drawable.class), null) );
     }
 
+    public Object getKeep() { return keep; }
+
+    public void setKeep(Object _keep) { keep = _keep; }
+
     public boolean setItem(Object obj) {
 
         if ( need.equals(obj.name) ) {

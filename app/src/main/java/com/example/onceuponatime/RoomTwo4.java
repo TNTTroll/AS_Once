@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.onceuponatime.Puzzles.FirstClock;
+import com.example.onceuponatime.Puzzles.SecondClock;
+
 public class RoomTwo4 extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
@@ -53,6 +56,10 @@ public class RoomTwo4 extends Fragment implements View.OnClickListener {
             case (R.id.second4Right):
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo1()).addToBackStack(null).commit();
                 break;
+
+            case (R.id.second4Clock):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new SecondClock()).addToBackStack(null).commit();
+                break;
         }
 
     }
@@ -65,6 +72,9 @@ public class RoomTwo4 extends Fragment implements View.OnClickListener {
 
         setLevel(2);
 
+        Object bg = (Object) view.findViewById(R.id.second4BG);
+        bg.setEnabled(false);
+
         for (ObjectInfo object : objects2.get(3)) {
             try {
                 int resID = getResId(object.name, R.id.class);
@@ -73,6 +83,13 @@ public class RoomTwo4 extends Fragment implements View.OnClickListener {
                 obj.setParam(object.name, object.icon);
                 obj.setOnClickListener(this);
 
+                if (obj.name.trim().equals("second4Bird")) {
+                    if (MainActivity.birds[1] == 0)
+                        obj.setVisibility(View.GONE);
+                } else if (obj.name.trim().equals("second4Bird_1")) {
+                    if (MainActivity.birds[0] == 0)
+                        obj.setVisibility(View.GONE);
+                }
             }
             catch(NullPointerException ignored) {}
         }

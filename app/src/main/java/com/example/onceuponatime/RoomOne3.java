@@ -99,14 +99,14 @@ public class RoomOne3 extends Fragment implements View.OnClickListener {
                 obj.setOnClickListener(this);
 
                 if (obj.name.trim().equals("first3Bird")) {
-                    if (!MainActivity.firstWindowOpen || MainActivity.firstBird1Saw)
+                    if (!MainActivity.firstWindowOpen || MainActivity.birds[0] == 1)
                         obj.setVisibility(View.GONE);
 
                 } else if (obj.name.trim().equals("first3Window"))
                     if (MainActivity.firstWindowOpen) {
                         obj.setEnabled(false);
                         obj.setIcon("room1_window_open");
-                        MainActivity.firstBird1Saw = true;
+                        MainActivity.birds[0] = 1;
                     }
 
 

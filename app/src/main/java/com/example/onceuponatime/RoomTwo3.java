@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.onceuponatime.Puzzles.FirstCloset;
+import com.example.onceuponatime.Puzzles.SecondTable;
+
 public class RoomTwo3 extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
@@ -52,6 +55,22 @@ public class RoomTwo3 extends Fragment implements View.OnClickListener {
             case (R.id.second3Right):
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo4()).addToBackStack(null).commit();
                 break;
+
+            case (R.id.second3Window):
+                Object window = view.findViewById(R.id.second3Window);
+
+                if (MainActivity.secondWindowOpen)
+                    window.setIcon("room1_window_close");
+                else
+                    window.setIcon("room1_window_open");
+
+                MainActivity.secondWindowOpen = !MainActivity.secondWindowOpen;
+
+                break;
+
+            case (R.id.second3Table):
+                getParentFragmentManager().beginTransaction().replace(R.id.roomView, new SecondTable()).addToBackStack(null).commit();
+                break;
         }
 
     }
@@ -62,6 +81,9 @@ public class RoomTwo3 extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_room_two3, container, false);
 
+        Object bg = (Object) view.findViewById(R.id.second3BG);
+        bg.setEnabled(false);
+
         for (ObjectInfo object : objects2.get(2)) {
             try {
                 int resID = getResId(object.name, R.id.class);
@@ -69,6 +91,17 @@ public class RoomTwo3 extends Fragment implements View.OnClickListener {
 
                 obj.setParam(object.name, object.icon);
                 obj.setOnClickListener(this);
+
+                if (obj.name.trim().equals("second3Bird")) {
+                    if (!MainActivity.secondWindowOpen || MainActivity.birds[1] == 1)
+                        obj.setVisibility(View.GONE);
+
+                } else if (obj.name.trim().equals("second3Window"))
+                    if (MainActivity.secondWindowOpen) {
+                        obj.setEnabled(false);
+                        obj.setIcon("room1_window_open");
+                        MainActivity.birds[1] = 1;
+                    }
 
             }
             catch(NullPointerException ignored) {}

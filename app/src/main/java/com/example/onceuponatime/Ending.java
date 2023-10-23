@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Ending extends AppCompatActivity {
@@ -15,6 +16,9 @@ public class Ending extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ending);
 
+        ImageButton bg = (ImageButton) findViewById(R.id.endBG);
+        bg.setEnabled(false);
+        
         Object back = (Object) findViewById(R.id.endBack);
         back.setOnClickListener(v -> {
             startActivity( new Intent(this, MainActivity.class) );
