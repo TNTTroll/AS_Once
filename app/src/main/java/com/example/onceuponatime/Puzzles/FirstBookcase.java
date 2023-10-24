@@ -201,6 +201,8 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
     }
 
     private void redrawBooks() {
+        int[] placeBook = {4, 3, 2, 5, 1};
+
         if (!MainActivity.firstBooksDone) {
             bookPlace.setY(posY);
             bookPlace.setX(posX[0]);
@@ -215,7 +217,7 @@ public class FirstBookcase extends Fragment implements View.OnClickListener {
                 books[x].setEnabled(false);
 
                 books[x].setY( posY );
-                books[x].setX( posX[0] + posX[1] * (needBook[x] - 1) );
+                books[x].setX( posX[0] + posX[1] * (placeBook[x] - 1) );
             }
     }
 

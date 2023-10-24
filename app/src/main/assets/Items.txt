@@ -222,6 +222,7 @@ third4Bird_1//bird_1
 third4Bird_2//bird_2
 
 thirdDoorBack//back
+thirdDoorNewTime//back
 
 thirdClockBack//back
 thirdClockHour//arrow_hour
@@ -229,7 +230,6 @@ thirdClockMinute//arrow_minute
 thirdClockCrystal_1//crystal
 thirdClockCrystal_2//crystal
 thirdClockCrystal_3//crystal
-thirdClockCrystal_4//crystal
 ^side
 
 -holders

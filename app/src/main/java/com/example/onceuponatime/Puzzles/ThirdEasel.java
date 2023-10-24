@@ -42,11 +42,16 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
 
     Holder palette;
 
-    Object[] pixels = new Object[28];
-    boolean[] pixelColored = new boolean[pixels.length];
-
     String needCup = "thirdCups_1";
     int needTap = 1;
+
+    boolean[] needPixels = {true, false, false, false, false, false, false,
+                            false, true, false, false, false, false, false,
+                            false, false, true, false, false, false, false,
+                            false, false, false, true, false, false, false };
+
+    Object[] pixels = new Object[28];
+    boolean[] pixelColored = new boolean[pixels.length];
 
     public ThirdEasel() {
     }
@@ -73,6 +78,7 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.thirdEaselBack):
+                MainActivity.thirdEaselPixelColored = pixelColored;
                 getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree2()).addToBackStack(null).commit();
                 break;
 
@@ -117,6 +123,16 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                 }
             }
 
+        if (!MainActivity.thirdEaselDone)
+            if (checkEasel()) {
+                MainActivity.thirdEaselDone = true;
+
+                for (Object pixel : pixels)
+                    pixel.setVisibility(View.GONE);
+
+                bg.setIcon("bg_clock");
+            }
+
         Scene.reloadInventory();
     }
 
@@ -131,9 +147,13 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
 
         bg = (Object) view.findViewById(R.id.thirdEaselBG);
         bg.setEnabled(false);
+        if (MainActivity.thirdEaselDone)
+            bg.setIcon("bg_clock");
 
         Object back = (Object) view.findViewById(R.id.thirdEaselBack);
         back.setOnClickListener(this);
+
+        pixelColored = MainActivity.thirdEaselPixelColored;
 
         for (int index = 1; index <= pixels.length; index++) {
             try {
@@ -149,6 +169,9 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                         obj.setVisibility(View.GONE);
 
                     pixels[index - 1] = obj;
+
+                    if (pixelColored[index - 1])
+                        obj.setIcon("yes");
                 }
 
                 setPosition(obj);
@@ -176,6 +199,14 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
         }
 
         return view;
+    }
+
+    private boolean checkEasel() {
+        for (int index = 0; index < pixels.length; index++)
+            if ( pixelColored[index] != needPixels[index] )
+                return false;
+
+        return true;
     }
 
     private void setPosition(Object obj) {

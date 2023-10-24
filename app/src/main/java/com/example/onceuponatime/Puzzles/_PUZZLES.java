@@ -32,6 +32,11 @@ public class _PUZZLES {
     public static int[] secondTableLockersSequence = {1, 3, 2};
     public static int[] secondTableImagesSequence = {1, 3, 5, 2, 4};
 
+    // <<< ENDING
+    public static int[] thirdEndingBad = {1, 2, 3};
+    public static int[] thirdEndingNeutral = {2, 3, 1};
+    public static int[] thirdEndingGood = {3, 1, 2};
+
     // <<< LORE
     public static String[] lore = {"Hello"};
 }

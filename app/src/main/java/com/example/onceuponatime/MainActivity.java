@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
     public static int thirdCupsTookTap = -1;
     public static boolean[] thirdCupsTook = new boolean[4];
     public static boolean thirdEaselPaletteDone = false;
+    public static boolean[] thirdEaselPixelColored = new boolean[28];
     public static boolean thirdEaselDone = false;
 
     public static boolean thirdWindowOpen = false;

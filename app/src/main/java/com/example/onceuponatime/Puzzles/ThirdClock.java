@@ -38,7 +38,7 @@ public class ThirdClock extends Fragment implements View.OnClickListener {
 
     Object hour, minute, bg, back;
     Holder clock;
-    Object[] crystals = new Object[4];
+    Object[] crystals = new Object[3];
 
     public ThirdClock() {
     }
@@ -92,6 +92,7 @@ public class ThirdClock extends Fragment implements View.OnClickListener {
                 if (MainActivity.thirdMinuteArrowPlaced && MainActivity.thirdHourArrowPlaced) {
                     clock.setVisibility(View.GONE);
 
+                    Log.d("CLOCK", "Placed");
                     for (Object crystal : crystals)
                         crystal.setVisibility(View.VISIBLE);
                 }
@@ -112,6 +113,11 @@ public class ThirdClock extends Fragment implements View.OnClickListener {
                     int currentCrystal = Integer.parseInt( "" + obj.getName().charAt(obj.getName().length()-1) ) - 1;
 
                     MainActivity.thirdClockTookCrystal[currentCrystal] = true;
+
+                    hour.setVisibility(View.GONE);
+                    minute.setVisibility(View.GONE);
+
+                    bg.setIcon("bg_wall");
                 }
 
                 break;
@@ -167,6 +173,13 @@ public class ThirdClock extends Fragment implements View.OnClickListener {
 
             }
             catch(NullPointerException ignored) {}
+        }
+
+        if (MainActivity.thirdMinuteArrowPlaced && MainActivity.thirdHourArrowPlaced) {
+            bg.setIcon("bg_wall");
+
+            hour.setVisibility(View.GONE);
+            minute.setVisibility(View.GONE);
         }
 
         for (HolderInfo holder : holders3.get(3)) {

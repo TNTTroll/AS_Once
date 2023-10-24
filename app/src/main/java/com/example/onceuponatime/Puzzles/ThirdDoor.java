@@ -6,6 +6,7 @@ import static com.example.onceuponatime.Scene.current_Item;
 import static com.example.onceuponatime.Scene.getResId;
 import static com.example.onceuponatime.Scene.inventory;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.onceuponatime.Ending;
 import com.example.onceuponatime.Holder;
 import com.example.onceuponatime.HolderInfo;
 import com.example.onceuponatime.MainActivity;
@@ -24,6 +26,7 @@ import com.example.onceuponatime.ObjectInfo;
 import com.example.onceuponatime.R;
 import com.example.onceuponatime.RoomThree1;
 import com.example.onceuponatime.RoomThree4;
+import com.example.onceuponatime.Scene;
 
 public class ThirdDoor extends Fragment implements View.OnClickListener {
 
@@ -35,13 +38,13 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object bg;
+    Object bg, time, back;
 
     Holder[] diamonds = new Holder[3];
 
-    int[] endingBad = {1, 2, 3};
-    int[] endingNeutral = {2, 3, 1};
-    int[] endingGood = {3, 1, 2};
+    int[] endingBad = _PUZZLES.thirdEndingBad;
+    int[] endingNeutral = _PUZZLES.thirdEndingNeutral;
+    int[] endingGood = _PUZZLES.thirdEndingGood;
 
     public ThirdDoor() {
     }
@@ -66,8 +69,24 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.thirdDoorBack)
-            getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree4()).addToBackStack(null).commit();
+        switch (v.getId()) {
+            case (R.id.thirdDoorBack):
+                    getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree4()).addToBackStack(null).commit();
+                    break;
+
+            case (R.id.thirdDoorNewTime):
+
+                if (MainActivity.thirdEnding == 1)
+                    Toast.makeText(getActivity(), "BAD ENDING!", Toast.LENGTH_LONG).show();
+                else if (MainActivity.thirdEnding == 2)
+                    Toast.makeText(getActivity(), "NEUTRAL ENDING!", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(getActivity(), "GOOD ENDING!", Toast.LENGTH_LONG).show();
+
+                startActivity(new Intent(getActivity(), Ending.class));
+
+                break;
+        }
 
         for (HolderInfo holder : holders3.get(3)) {
             int resID = getResId(holder.getName(), R.id.class);
@@ -78,13 +97,15 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
                 if (holder.getName().startsWith("thirdDoor_")) {
                     if (!holder.getUsed()) {
                         if (current_Item != -1 && inventory[current_Item] != null) {
-                            hold.setKeep(inventory[current_Item]);
-                            hold.setIcon(inventory[current_Item].getIcon());
+                            if (inventory[current_Item].getName().startsWith("thirdClockCrystal_")) {
+                                hold.setKeep(inventory[current_Item]);
+                                hold.setIcon(inventory[current_Item].getIcon());
 
-                            holder.setUsed(true);
+                                holder.setUsed(true);
 
-                            inventory[current_Item] = null;
-                            current_Item = -1;
+                                inventory[current_Item] = null;
+                                current_Item = -1;
+                            }
                         }
 
                     } else {
@@ -112,6 +133,7 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
                 stopClicking(3);
         }
 
+        Scene.reloadInventory();
     }
 
     @Override
@@ -130,6 +152,19 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
 
                 obj.setParam(object.getName(), object.getIcon());
                 obj.setOnClickListener(this);
+
+                if (object.getName().trim().equals("thirdDoorBack")) {
+                    back = obj;
+
+                    if (MainActivity.thirdDoorDone)
+                        back.setVisibility(View.GONE);
+
+                } else if (object.getName().trim().equals("thirdDoorNewTime")) {
+                    time = obj;
+
+                    if (!MainActivity.thirdDoorDone)
+                        time.setVisibility(View.GONE);
+                }
 
             }
             catch(NullPointerException ignored) {}
@@ -177,6 +212,9 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
         MainActivity.thirdEnding = ending;
 
         MainActivity.thirdDoorDone = true;
+
+        back.setVisibility(View.GONE);
+        time.setVisibility(View.VISIBLE);
 
         for (int index = 1; index <= 3; index++) {
             int resID = getResId("thirdDoor_" + index, R.id.class);

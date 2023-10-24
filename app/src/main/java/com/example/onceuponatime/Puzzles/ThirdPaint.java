@@ -154,7 +154,7 @@ public class ThirdPaint extends Fragment implements View.OnClickListener {
     private void generatePaints() {
         Random random = new Random();
         for (int index = 0; index < paintCount; index++)
-            paintAngle[index] = random.nextInt(3);
+            paintAngle[index] = random.nextInt(4);
     }
 
     private boolean checkPaints() {
