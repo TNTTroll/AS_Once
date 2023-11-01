@@ -45,10 +45,7 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
     String needCup = "thirdCups_1";
     int needTap = 1;
 
-    boolean[] needPixels = {true, false, false, false, false, false, false,
-                            false, true, false, false, false, false, false,
-                            false, false, true, false, false, false, false,
-                            false, false, false, true, false, false, false };
+    boolean[] needPixels = _PUZZLES.thirdEaselSequence;
 
     Object[] pixels = new Object[28];
     boolean[] pixelColored = new boolean[pixels.length];
@@ -123,7 +120,7 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                 }
             }
 
-        if (!MainActivity.thirdEaselDone)
+        if (!MainActivity.thirdEaselDone) {
             if (checkEasel()) {
                 MainActivity.thirdEaselDone = true;
 
@@ -131,7 +128,11 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                     pixel.setVisibility(View.GONE);
 
                 bg.setIcon("bg_clock");
-            }
+
+            } else if (!MainActivity.getAchievement(8))
+                if (achieveEasel())
+                    MainActivity.setAchievement(8);
+        }
 
         Scene.reloadInventory();
     }
@@ -204,6 +205,14 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
     private boolean checkEasel() {
         for (int index = 0; index < pixels.length; index++)
             if ( pixelColored[index] != needPixels[index] )
+                return false;
+
+        return true;
+    }
+
+    private boolean achieveEasel() {
+        for (int index = 0; index < pixels.length; index++)
+            if (!pixelColored[index])
                 return false;
 
         return true;

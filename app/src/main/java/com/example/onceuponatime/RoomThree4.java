@@ -76,6 +76,8 @@ public class RoomThree4 extends Fragment implements View.OnClickListener {
 
         setLevel(3);
 
+        Scene.showText(2);
+
         Object bg = (Object) view.findViewById(R.id.third4BG);
         bg.setEnabled(false);
 

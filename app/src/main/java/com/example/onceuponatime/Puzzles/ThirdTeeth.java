@@ -37,11 +37,11 @@ public class ThirdTeeth extends Fragment implements View.OnClickListener {
     int progress = 0;
 
     ArrayList<Integer> usedPlates = new ArrayList<>();
-    int[] needPlates = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int[] needPlates = _PUZZLES.thirdTeethClickSequence;
     Object[] clickPlates = new Object[platesCount];
 
     Object[] showPlates = new Object[platesCount];
-    int[] needShowPlates = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int[] needShowPlates = _PUZZLES.thirdTeethShowSequence;
 
     Handler handler = new Handler();
 

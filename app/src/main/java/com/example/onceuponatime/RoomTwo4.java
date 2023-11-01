@@ -72,6 +72,8 @@ public class RoomTwo4 extends Fragment implements View.OnClickListener {
 
         setLevel(2);
 
+        Scene.showText(1);
+
         Object bg = (Object) view.findViewById(R.id.second4BG);
         bg.setEnabled(false);
 

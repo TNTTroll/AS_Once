@@ -80,6 +80,10 @@ public class RoomTwo1 extends Fragment implements View.OnClickListener {
 
         if (MainActivity.secondWindowsOpen[0] && MainActivity.secondWindowsOpen[1])
             bg.setIcon("bg_wall");
+        else if (MainActivity.secondWindowsOpen[0])
+            bg.setIcon("bg_room12_1");
+        else if (MainActivity.secondWindowsOpen[1])
+            bg.setIcon("bg_room12_2");
         else
             bg.setIcon("bg_room11");
 

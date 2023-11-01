@@ -36,6 +36,8 @@ public class FirstChest extends Fragment implements View.OnClickListener {
     int posX[] = _PUZZLES.firstChestPosX;
     int posY = _PUZZLES.firstChestPosY;
 
+    String[] achieveSigns = {"symbol_1", "symbol_6", "symbol_7", "symbol_10", "symbol_15"};
+
     public FirstChest() {
     }
 
@@ -66,7 +68,7 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                 break;
 
             case (R.id.firstChestCheck):
-                if (!MainActivity.firstChestDone)
+                if (!MainActivity.firstChestDone) {
                     if (checkSigns()) {
                         MainActivity.firstChestDone = true;
 
@@ -80,6 +82,11 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                         book.setVisibility(View.VISIBLE);
                     }
 
+                    else if (!MainActivity.getAchievement(4))
+                        if (achieveSigns())
+                            MainActivity.setAchievement(4);
+                }
+
                 break;
 
             case (R.id.firstChestBook):
@@ -87,7 +94,7 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                 break;
         }
 
-        if (!MainActivity.firstChestDone)
+        if (!MainActivity.firstChestDone) {
             for (Object sign : signs) {
                 int resID = getResId(sign.getName(), R.id.class);
 
@@ -104,6 +111,7 @@ public class FirstChest extends Fragment implements View.OnClickListener {
                     break;
                 }
             }
+        }
 
     }
 
@@ -164,6 +172,16 @@ public class FirstChest extends Fragment implements View.OnClickListener {
         for (int index = 0; index < needSigns.length; index++) {
 
             if ( !signs[index].getIcon().trim().equals( needSigns[index] ))
+                return false;
+        }
+
+        return true;
+    }
+
+    private boolean achieveSigns() {
+        for (int index = 0; index < achieveSigns.length; index++) {
+
+            if ( !signs[index].getIcon().trim().equals( achieveSigns[index] ))
                 return false;
         }
 

@@ -76,6 +76,8 @@ public class RoomOne4 extends Fragment implements View.OnClickListener {
 
         setLevel(1);
 
+        Scene.showText(0);
+
         bg = (Object) view.findViewById(R.id.first4BG);
         bg.setEnabled(false);
 

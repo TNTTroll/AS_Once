@@ -49,6 +49,8 @@ public class SecondTable extends Fragment implements View.OnClickListener {
     ArrayList<Integer> usedImage = new ArrayList<>();
     Object[] images = new Object[needImage.length];
 
+    int[] achieveImage = {1, 2, 3, 4, 5};
+
     public SecondTable() {
     }
 
@@ -149,7 +151,7 @@ public class SecondTable extends Fragment implements View.OnClickListener {
                     pin.setVisibility(View.VISIBLE);
             }
 
-        if (!MainActivity.secondTableImagesDone)
+        if (!MainActivity.secondTableImagesDone) {
             if (checkImage()) {
                 MainActivity.secondTableImagesDone = true;
 
@@ -158,6 +160,11 @@ public class SecondTable extends Fragment implements View.OnClickListener {
 
                 hammer.setVisibility(View.VISIBLE);
             }
+
+            else if (!MainActivity.getAchievement(5))
+                if (checkAchieve())
+                    MainActivity.setAchievement(5);
+        }
 
         Scene.reloadInventory();
     }
@@ -246,6 +253,17 @@ public class SecondTable extends Fragment implements View.OnClickListener {
 
         for (int x = 0; x < needImage.length; x++)
             if (needImage[x] != usedImage.get(clickedImage - needImage.length + x))
+                return false;
+
+        return true;
+    }
+
+    private boolean checkAchieve() {
+        if (clickedImage < achieveImage.length)
+            return false;
+
+        for (int x = 0; x < achieveImage.length; x++)
+            if (achieveImage[x] != usedImage.get(clickedImage - achieveImage.length + x))
                 return false;
 
         return true;

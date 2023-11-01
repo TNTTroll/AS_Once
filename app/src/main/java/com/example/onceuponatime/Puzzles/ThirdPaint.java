@@ -35,10 +35,7 @@ public class ThirdPaint extends Fragment implements View.OnClickListener {
     int paintCount = 16;
 
     int[] paintAngle = new int[paintCount];
-    int[] paintAngleCorrect = {1, 0, 0, 0,
-                              0, 1, 0, 0,
-                              0, 0, 1, 0,
-                              0, 0, 0, 1 };
+    int[] paintAngleCorrect = _PUZZLES.thirdPaintSequence;
 
     public ThirdPaint() {
     }

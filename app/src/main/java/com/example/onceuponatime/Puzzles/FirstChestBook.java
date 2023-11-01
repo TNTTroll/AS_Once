@@ -57,8 +57,6 @@ public class FirstChestBook extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_first_chest_book, container, false);
 
-        MainActivity.setAchievement(_PUZZLES.achievements[0]);
-
         back = (Object) view.findViewById(R.id.firstChestBookBack);
         back.setOnClickListener(this);
 

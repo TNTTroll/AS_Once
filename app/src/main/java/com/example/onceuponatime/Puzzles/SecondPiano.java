@@ -1,7 +1,9 @@
 package com.example.onceuponatime.Puzzles;
 
 import static com.example.onceuponatime.MainActivity.objects2;
+import static com.example.onceuponatime.Scene.current_Item;
 import static com.example.onceuponatime.Scene.getResId;
+import static com.example.onceuponatime.Scene.inventory;
 
 import android.os.Bundle;
 
@@ -85,6 +87,11 @@ public class SecondPiano extends Fragment implements View.OnClickListener {
                 int currentPlate = Integer.parseInt( "" + obj.getName().charAt(obj.getName().length()-1) );
 
                 usedPlate.add(currentPlate);
+
+                if (!MainActivity.getAchievement(6))
+                    if (current_Item != -1 && inventory[current_Item] != null)
+                        if ( inventory[current_Item].getName().trim().equals("secondTableHammer") )
+                            MainActivity.setAchievement(6);
 
                 break;
             }

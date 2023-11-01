@@ -24,6 +24,8 @@ public class RoomThree3 extends Fragment implements View.OnClickListener {
 
     View view;
 
+    int clicked = 0;
+
     public RoomThree3() {
     }
 
@@ -65,6 +67,12 @@ public class RoomThree3 extends Fragment implements View.OnClickListener {
                     window.setIcon("room1_window_open");
 
                 MainActivity.thirdWindowOpen = !MainActivity.thirdWindowOpen;
+
+                if (!MainActivity.getAchievement(7)) {
+                    clicked += 1;
+                    if (clicked >= 5)
+                        MainActivity.setAchievement(7);
+                }
 
                 break;
 

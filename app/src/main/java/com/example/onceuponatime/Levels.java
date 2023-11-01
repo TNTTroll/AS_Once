@@ -46,42 +46,13 @@ public class Levels extends DialogFragment implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case (R.id.lvl_1):
-                setLevel(1);
-                break;
-
-            case (R.id.lvl_2):
-                setLevel(2);
-                break;
-
-            case (R.id.lvl_3):
-                setLevel(3);
-                break;
-        }
-
-        dismiss();
-
-        Intent scene = new Intent(MainActivity.thisContext, Scene.class);
-        startActivity(scene);
-    }
+    public void onClick(View v) {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_levels, container, false);
-
-        ImageButton bg = (ImageButton) view.findViewById(R.id.lvlBG);
-        bg.setEnabled(false);
-
-        for (int index = 1; index <= 3; index++) {
-            int resID = getResId("lvl_" + index, R.id.class);
-            Object obj = (Object) view.findViewById(resID);
-
-            obj.setOnClickListener(this);
-        }
 
         return view;
     }

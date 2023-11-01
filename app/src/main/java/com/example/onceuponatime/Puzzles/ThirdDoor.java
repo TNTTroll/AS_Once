@@ -83,6 +83,9 @@ public class ThirdDoor extends Fragment implements View.OnClickListener {
                 else
                     Toast.makeText(getActivity(), "GOOD ENDING!", Toast.LENGTH_LONG).show();
 
+                if (!MainActivity.getAchievement(MainActivity.thirdEnding - 1))
+                    MainActivity.setAchievement(MainActivity.thirdEnding - 1);
+
                 startActivity(new Intent(getActivity(), Ending.class));
 
                 break;

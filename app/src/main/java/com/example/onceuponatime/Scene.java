@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
@@ -19,6 +20,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.onceuponatime.Puzzles._PUZZLES;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
@@ -26,7 +29,9 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
     private View roomView;
 
-    public static Dialog dialog_texting;
+    public static Dialog dialog_texting, dialog_menu;
+
+    Object pause;
 
     @SuppressLint("StaticFieldLeak")
     private static ImageButton[] btn_invs = new ImageButton[4];
@@ -55,9 +60,24 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
         roomView = (View) findViewById(R.id.roomView);
 
         dialog_texting = new Dialog(this);
+        dialog_menu = new Dialog(this);
 
         ImageButton bg = (ImageButton) findViewById(R.id.sceneBG);
         bg.setEnabled(false);
+
+        pause = (Object) findViewById(R.id.scenePause);
+        pause.setOnClickListener(v -> {
+            dialog_menu.setContentView(R.layout.fragment_menu);
+
+            ImageButton bg_menu = (ImageButton) dialog_menu.findViewById(R.id.menuBG);
+            bg_menu.setEnabled(false);
+
+            Object back_menu = (Object) dialog_menu.findViewById(R.id.menuBack);
+            back_menu.setOnClickListener(c -> startActivity(new Intent(Scene.this, MainActivity.class)));
+
+            dialog_menu.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog_menu.show();
+        });
 
         switch (player.getLevel()) {
             case 1:
@@ -124,16 +144,23 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public static void showText(String text) {
-        dialog_texting.setContentView(R.layout.fragment_texting);
+    public static void showText(int index) {
 
-        Object back = (Object) dialog_texting.findViewById(R.id.textingBack);
-        back.setOnClickListener(v -> dialog_texting.dismiss());
+        if (!MainActivity.loreSaw[index]) {
+            String text = _PUZZLES.lore[index];
 
-        TextView lor = (TextView) dialog_texting.findViewById(R.id.textingText);
-        lor.setText(text);
+            dialog_texting.setContentView(R.layout.fragment_texting);
 
-        dialog_texting.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog_texting.show();
+            Object back = (Object) dialog_texting.findViewById(R.id.textingBack);
+            back.setOnClickListener(v -> dialog_texting.dismiss());
+
+            TextView lor = (TextView) dialog_texting.findViewById(R.id.textingText);
+            lor.setText(text);
+
+            dialog_texting.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog_texting.show();
+
+            MainActivity.loreSaw[index] = true;
+        }
     }
 }

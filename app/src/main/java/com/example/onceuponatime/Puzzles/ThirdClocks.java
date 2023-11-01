@@ -34,7 +34,7 @@ public class ThirdClocks extends Fragment implements View.OnClickListener {
     Object bg, arrow;
     Object[] clocks = new Object[4];
 
-    int[] needClocks = {1, 0, 0, 0};
+    int[] needClocks = _PUZZLES.thirdClocksSequence;
 
     int[] usedClocks = new int[4];
 

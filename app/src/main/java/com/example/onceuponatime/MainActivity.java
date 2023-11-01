@@ -37,7 +37,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     // MainActivity.setLevel(lvl);
-    // MainActivity.setAchievement(_PUZZLES.achievements[index]);
+    // MainActivity.setAchievement(index);
     // MainActivity.playAudio("song");
     // Scene.showText(_PUZZLES.lore[index]);
 
@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     public static MainActivity thisContext;
 
     public static Display display;
+
+    public static boolean[] loreSaw = new boolean[_PUZZLES.lore.length];
 
     // <<< Birds
     public static int[] birds = new int[3];
@@ -182,28 +184,16 @@ public class MainActivity extends AppCompatActivity {
             dialog_tutorial.show();
         });
 
+        Button sure = (Button) findViewById(R.id.menuBtnAccept);
         Button clear = (Button) findViewById(R.id.menuBtnClear);
         clear.setVisibility(View.GONE);
         clear.setOnClickListener(view -> {
-            setLevel(1);
+            restartAll();
 
-            FileOutputStream outputStream = null;
-            try {
-                outputStream = thisContext.openFileOutput(saveFile, Context.MODE_PRIVATE);
-
-                String playerInfo = player.getName() + "&1&000" + '\n';
-                outputStream.write(playerInfo.getBytes());
-
-                outputStream.close();
-
-            } catch (IOException ignored) {}
-
-            Toast.makeText(getApplicationContext(), "Your progress has been deleted", Toast.LENGTH_LONG).show();
-
-            clear.setText("Done");
+            clear.setVisibility(View.GONE);
+            sure.setVisibility(View.VISIBLE);
         });
 
-        Button sure = (Button) findViewById(R.id.menuBtnAccept);
         sure.setOnClickListener(view -> {
             sure.setVisibility(View.GONE);
             clear.setVisibility(View.VISIBLE);
@@ -292,35 +282,25 @@ public class MainActivity extends AppCompatActivity {
         ImageButton no = (ImageButton) dialog_lvl.findViewById(R.id.lvlNo);
         no.setOnClickListener(v -> dialog_lvl.dismiss());
 
-        ImageButton lvl_1 = (ImageButton) dialog_lvl.findViewById(R.id.lvl_1);
-        lvl_1.setOnClickListener(v -> {
-            setLevel(1);
+        for (int index = 1; index <= 3; index++) {
+            int resId = getResId("lvl_" + index, R.id.class);
+            Object lvl = (Object) dialog_lvl.findViewById(resId);
 
-            Intent scene = new Intent(MainActivity.thisContext, Scene.class);
-            startActivity(scene);
+            int finalIndex = index;
+            lvl.setOnClickListener(v -> {
+                setLevel(finalIndex);
 
-            dialog_lvl.dismiss();
-        });
+                Intent scene = new Intent(MainActivity.thisContext, Scene.class);
+                startActivity(scene);
 
-        ImageButton lvl_2 = (ImageButton) dialog_lvl.findViewById(R.id.lvl_2);
-        lvl_2.setOnClickListener(v -> {
-            setLevel(2);
+                dialog_lvl.dismiss();
+            });
 
-            Intent scene = new Intent(MainActivity.thisContext, Scene.class);
-            startActivity(scene);
-
-            dialog_lvl.dismiss();
-        });
-
-        ImageButton lvl_3 = (ImageButton) dialog_lvl.findViewById(R.id.lvl_3);
-        lvl_3.setOnClickListener(v -> {
-            setLevel(3);
-
-            Intent scene = new Intent(MainActivity.thisContext, Scene.class);
-            startActivity(scene);
-
-            dialog_lvl.dismiss();
-        });
+            if (index > player.getLevel()) {
+                lvl.setIcon("no");
+                lvl.setEnabled(false);
+            }
+        }
 
         dialog_lvl.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog_lvl.show();
@@ -449,7 +429,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static boolean getAchievement(String achieve) {
+    public static boolean getAchievement(int a) {
+
+        String achieve = _PUZZLES.achievements[a];
+
         List<String> playerAchievements = new ArrayList<String>();
 
         try {
@@ -473,7 +456,9 @@ public class MainActivity extends AppCompatActivity {
         return playerAchievements.contains(achieve.trim());
     }
 
-    public static void setAchievement(String achieve) {
+    public static void setAchievement(int a) {
+
+        String achieve = _PUZZLES.achievements[a];
 
         List<String> playerAchievements = new ArrayList<String>();
 
@@ -504,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 assert outputStream != null;
 
-                Toast.makeText(thisContext.getApplicationContext(), "Achievement get: " + achieve, Toast.LENGTH_LONG).show();
+                Toast.makeText(thisContext.getApplicationContext(), "Achievement get: " + _PUZZLES.achievementsExplain[a], Toast.LENGTH_LONG).show();
 
                 achieve += '\n';
                 outputStream.write(achieve.getBytes());
@@ -514,6 +499,72 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException ignored) {}
 
         }
+    }
+
+    private void restartAll() {
+        setLevel(1);
+
+        loreSaw = new boolean[_PUZZLES.lore.length];
+        birds = new int[3];
+
+        firstWindowsDone = false;
+        firstTookBook = false;
+        firstPlatesDone = false;
+        firstTookHourArrow = false;
+        firstBooksPlaced = false;
+        firstBooksDone = false;
+        firstWindowOpen = false;
+        firstTookMinuteArrow = false;
+        firstClosetDone = false;
+        firstChestDone = false;
+        firstHourArrowPlaced = false;
+        firstMinuteArrowPlaced = false;
+
+        secondWindowsOpen = new boolean[2];
+        secondPianoDone = false;
+        secondTookMinuteArrow = false;
+        secondDeskDone = false;
+        secondDeskPinsDone = false;
+        secondDeskPlacedPins = new Object[3];
+        secondTookHourArrow = false;
+        secondWindowOpen = false;
+        secondTableLockersDone = false;
+        secondTableTookPins = new boolean[3];
+        secondTableImagesDone = false;
+        secondTableTookHammer = false;
+        secondHourArrowPlaced = false;
+        secondMinuteArrowPlaced = false;
+
+        thirdClocksDone = false;
+        thirdTookHourArrow = false;
+        thirdTeethDone = false;
+        thirdCupsTookTap = -1;
+        thirdCupsTook = new boolean[4];
+        thirdEaselPaletteDone = false;
+        thirdEaselPixelColored = new boolean[28];
+        thirdEaselDone = false;
+        thirdWindowOpen = false;
+        thirdPaintsAngles = new int[16];
+        thirdPaintDone = false;
+        thirdTookMinuteArrow = false;
+        thirdClockTookCrystal = new boolean[4];
+        thirdDoorDone = false;
+        thirdEnding = -1;
+        thirdHourArrowPlaced = false;
+        thirdMinuteArrowPlaced = false;
+
+        FileOutputStream outputStream = null;
+        try {
+            outputStream = thisContext.openFileOutput(saveFile, Context.MODE_PRIVATE);
+
+            String playerInfo = player.getName() + "&1&000" + '\n';
+            outputStream.write(playerInfo.getBytes());
+
+            outputStream.close();
+
+        } catch (IOException ignored) {}
+
+        Toast.makeText(getApplicationContext(), "Your progress has been deleted", Toast.LENGTH_LONG).show();
     }
 
     public static void playAudio(String audio) {

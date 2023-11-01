@@ -38,6 +38,8 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
     ArrayList<Integer> usedPlate = new ArrayList<>();
     Object[] plates = new Object[needPlate.length];
 
+    int[] achievePlate = {2, 4, 3, 5, 1};
+
     public FirstPlates() {
     }
 
@@ -76,7 +78,7 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
             }
         }
 
-        if (!MainActivity.firstPlatesDone)
+        if (!MainActivity.firstPlatesDone) {
             if (checkPlates()) {
                 MainActivity.firstPlatesDone = true;
 
@@ -87,6 +89,11 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
 
                 plates[0].setIcon("plates_1_open");
             }
+
+            else if (!MainActivity.getAchievement(3))
+                if (checkAchieve())
+                    MainActivity.setAchievement(3);
+        }
 
         switch (v.getId()) {
             case (R.id.firstPlatesBack):
@@ -155,6 +162,17 @@ public class FirstPlates extends Fragment implements View.OnClickListener {
 
         for (int x = 0; x < needPlate.length; x++)
             if (needPlate[x] != usedPlate.get(clicked - needPlate.length + x))
+                return false;
+
+        return true;
+    }
+
+    private boolean checkAchieve() {
+        if (clicked < achievePlate.length)
+            return false;
+
+        for (int x = 0; x < achievePlate.length; x++)
+            if (achievePlate[x] != usedPlate.get(clicked - achievePlate.length + x))
                 return false;
 
         return true;

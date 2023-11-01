@@ -1,18 +1,13 @@
 package com.example.onceuponatime;
 
-import static com.example.onceuponatime.Scene.getResId;
-
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.onceuponatime.Puzzles._PUZZLES;
+import androidx.fragment.app.DialogFragment;
 
-public class Achievements extends Fragment implements View.OnClickListener {
+public class Menu extends DialogFragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -22,11 +17,11 @@ public class Achievements extends Fragment implements View.OnClickListener {
 
     View view;
 
-    public Achievements() {
+    public Menu() {
     }
 
-    public static Achievements newInstance(String param1, String param2) {
-        Achievements fragment = new Achievements();
+    public static Menu newInstance(String param1, String param2) {
+        Menu fragment = new Menu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -52,17 +47,7 @@ public class Achievements extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_achievements, container, false);
-
-        for (int index = 1; index <= _PUZZLES.achievements.length; index++) {
-            Object obj = (Object) view.findViewById(getResId("ach_" + index, R.id.class));
-
-            obj.setParam(_PUZZLES.achievements[index - 1], "ach_" + index);
-
-            if (!MainActivity.getAchievement(index - 1))
-                obj.setIcon("pnc");
-
-        }
+        view = inflater.inflate(R.layout.fragment_menu, container, false);
 
         return view;
     }
