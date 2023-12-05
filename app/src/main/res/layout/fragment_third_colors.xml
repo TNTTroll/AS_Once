@@ -25,6 +25,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
+        android:id="@+id/thirdColorsBook"
+        android:layout_width="1118px"
+        android:layout_height="954px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/colors_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.example.onceuponatime.Object
         android:id="@+id/thirdColorsBack"
         android:layout_width="50dp"
         android:layout_height="50dp"

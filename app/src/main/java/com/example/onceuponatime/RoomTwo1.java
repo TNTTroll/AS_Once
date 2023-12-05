@@ -59,9 +59,9 @@ public class RoomTwo1 extends Fragment implements View.OnClickListener {
 
             case (R.id.second1WindowL):
                 if (MainActivity.secondWindowsOpen[0])
-                    windowL.setIcon("window_close");
+                    windowL.setIcon("room21_window_left_1");
                 else
-                    windowL.setIcon("window_open");
+                    windowL.setIcon("room21_window_left_2");
 
                 MainActivity.secondWindowsOpen[0] = !MainActivity.secondWindowsOpen[0];
 
@@ -69,9 +69,9 @@ public class RoomTwo1 extends Fragment implements View.OnClickListener {
 
             case (R.id.second1WindowR):
                 if (MainActivity.secondWindowsOpen[1])
-                    windowR.setIcon("window_close");
+                    windowR.setIcon("room21_window_right_1");
                 else
-                    windowR.setIcon("window_open");
+                    windowR.setIcon("room21_window_right_2");
 
                 MainActivity.secondWindowsOpen[1] = !MainActivity.secondWindowsOpen[1];
 
@@ -79,13 +79,9 @@ public class RoomTwo1 extends Fragment implements View.OnClickListener {
         }
 
         if (MainActivity.secondWindowsOpen[0] && MainActivity.secondWindowsOpen[1])
-            bg.setIcon("bg_wall");
-        else if (MainActivity.secondWindowsOpen[0])
-            bg.setIcon("bg_room12_1");
-        else if (MainActivity.secondWindowsOpen[1])
-            bg.setIcon("bg_room12_2");
+            bg.setIcon("bg_room21_2");
         else
-            bg.setIcon("bg_room11");
+            bg.setIcon("bg_room21_1");
 
     }
 
@@ -129,13 +125,13 @@ public class RoomTwo1 extends Fragment implements View.OnClickListener {
         }
 
         if (MainActivity.secondWindowsOpen[0])
-            windowL.setIcon("window_open");
+            windowL.setIcon("room21_window_left_2");
 
         if (MainActivity.secondWindowsOpen[1])
-            windowR.setIcon("window_open");
+            windowR.setIcon("room21_window_right_2");
 
         if (MainActivity.secondWindowsOpen[0] && MainActivity.secondWindowsOpen[1]) {
-            bg.setIcon("bg_wall");
+            bg.setIcon("bg_room21_2");
         }
 
         return view;

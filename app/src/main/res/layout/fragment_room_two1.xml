@@ -18,7 +18,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/bg_room11"
+        android:background="@drawable/bg_room21_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,34 +54,34 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/second1WindowL"
-        android:layout_width="164dp"
-        android:layout_height="235dp"
+        android:layout_width="600px"
+        android:layout_height="954px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="240dp"
+        android:layout_marginStart="76dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/window_close"
+        android:background="@drawable/room21_window_left_1"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.333" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/second1WindowR"
-        android:layout_width="164dp"
-        android:layout_height="235dp"
+        android:layout_width="600px"
+        android:layout_height="954px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="248dp"
+        android:layout_marginEnd="76dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/window_close"
+        android:background="@drawable/room21_window_right_1"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.333" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

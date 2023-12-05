@@ -31,6 +31,8 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
     public static Dialog dialog_texting, dialog_menu;
 
+    public static Object indicator;
+
     Object pause;
 
     @SuppressLint("StaticFieldLeak")
@@ -59,6 +61,9 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
         roomView = (View) findViewById(R.id.roomView);
 
+        indicator = (Object) findViewById(R.id.sceneIndicator);
+        indicator.setEnabled(false);
+
         dialog_texting = new Dialog(this);
         dialog_menu = new Dialog(this);
 
@@ -81,15 +86,18 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
         switch (player.getLevel()) {
             case 1:
-                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne4()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree3()).commit();
+                indicator.setIcon("bg_indicator_1");
                 break;
 
             case 2:
                 getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo4()).commit();
+                indicator.setIcon("bg_indicator_2");
                 break;
 
             case 3:
                 getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree4()).commit();
+                indicator.setIcon("bg_indicator_3");
                 break;
         }
 

@@ -101,13 +101,13 @@ second2Left//left
 second2Right//right
 
 secondPianoBack//back
-secondPiano_1//pnc
-secondPiano_2//pnc
-secondPiano_3//pnc
-secondPiano_4//pnc
-secondPiano_5//pnc
-secondPiano_6//pnc
-secondPiano_7//pnc
+secondPiano_1//none
+secondPiano_2//none
+secondPiano_3//none
+secondPiano_4//none
+secondPiano_5//none
+secondPiano_6//none
+secondPiano_7//none
 secondMinuteArrow//arrow_minute
 
 secondDeskBack//back
@@ -127,11 +127,12 @@ secondTableLocker_3//black
 secondTablePin_1//pin_1
 secondTablePin_2//pin_2
 secondTablePin_3//pin_3
-secondTableImages_1//no
-secondTableImages_2//no
-secondTableImages_3//no
-secondTableImages_4//no
-secondTableImages_5//no
+secondTableImages_1//table_butterfly
+secondTableImages_2//table_horse
+secondTableImages_3//table_mountain
+secondTableImages_4//table_sun
+secondTableImages_5//table_sunflower
+secondTableImages_6//table_tree
 secondTableHammer//hammer
 ^side
 
@@ -167,14 +168,14 @@ secondClockPlacement//secondHourArrow//clock_display_empty
 -puzzles
 ^side
 
-second2Piano//SecondPiano//pnc
-second2Desk//SecondDesk//pnc
+second2Piano//SecondPiano//none
+second2Desk//SecondDesk//none
 ^side
 
-second3Table//SecondTable//pnc
+second3Table//SecondTable//none
 ^side
 
-second4Clock//SecondClock//pnc
+second4Clock//SecondClock//none
 ^side
 
 
@@ -184,10 +185,10 @@ third1Left//left
 third1Right//right
 
 thirdClocksBack//back
-thirdClocks_1//crystal
-thirdClocks_2//crystal
-thirdClocks_3//crystal
-thirdClocks_4//crystal
+thirdClocks_1//clocks_0
+thirdClocks_2//clocks_0
+thirdClocks_3//clocks_0
+thirdClocks_4//clocks_0
 thirdHourArrow//arrow_hour
 
 thirdColorsBack//back
@@ -235,12 +236,10 @@ thirdClockCrystal_3//crystal
 -holders
 ^side
 
-thirdCupsTap_1//cup//tap
-thirdCupsTap_2//cup//tap
-thirdCupsTap_3//cup//tap
-thirdCupsTap_4//cup//tap
-thirdCupsTap_5//cup//tap
-thirdCupsTap_6//cup//tap
+thirdCupsTap_1//cup//none
+thirdCupsTap_2//cup//none
+thirdCupsTap_3//cup//none
+thirdCupsTap_4//cup//none
 
 thirdEaselPalette//cup//plate
 ^side
@@ -254,16 +253,16 @@ thirdClockPlacement//thirdHourArrow//clock_display_empty
 ^side
 
 -puzzles
-third1Clocks//ThirdClocks//pnc
-third1Windows//ThirdWindows//pnc
-third1Colors//ThirdColors//pnc
+third1Clocks//ThirdClocks//none
+third1Windows//ThirdWindows//none
+third1Colors//ThirdColors//none
 ^side
 
-third2Cups//ThirdCups//pnc
-third2Easel//ThirdEasel//pnc
+third2Cups//ThirdCups//none
+third2Easel//ThirdEasel//none
 ^side
 
-third3Paint//ThirdPaint//pnc
+third3Paint//ThirdPaint//none
 ^side
 
 third4Door//ThirdDoor//pnc

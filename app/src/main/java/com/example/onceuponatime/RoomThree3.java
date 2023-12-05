@@ -70,8 +70,12 @@ public class RoomThree3 extends Fragment implements View.OnClickListener {
 
                 if (!MainActivity.getAchievement(7)) {
                     clicked += 1;
-                    if (clicked >= 5)
+                    if (clicked >= 5) {
                         MainActivity.setAchievement(7);
+
+                        window.setIcon("window_cracked_2");
+                        window.setEnabled(false);
+                    }
                 }
 
                 break;

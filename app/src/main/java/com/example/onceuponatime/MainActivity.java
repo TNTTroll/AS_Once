@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button play = (Button) findViewById(R.id.menuBtnPlay);
         play.setOnClickListener(view -> {
-            Intent scene = new Intent(MainActivity.this, Ending.class);
+            Intent scene = new Intent(MainActivity.this, Scene.class);
             startActivity(scene);
         });
 

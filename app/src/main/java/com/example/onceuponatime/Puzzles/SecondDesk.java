@@ -149,12 +149,12 @@ public class SecondDesk extends Fragment implements View.OnClickListener {
             if (checkPins()) {
                 MainActivity.secondDeskPinsDone = true;
 
+                bg.setIcon("bg_board_2");
+
                 arrow.setVisibility(View.VISIBLE);
 
                 for (Holder pin : pins)
                     pin.setVisibility(View.GONE);
-
-                bg.setVisibility(View.GONE);
 
                 for (Object item : inventory)
                     if (item != null)
@@ -175,11 +175,11 @@ public class SecondDesk extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_second_desk, container, false);
 
-        Object wall = (Object) view.findViewById(R.id.secondDeskWallBG);
-        wall.setEnabled(false);
-
         bg = (Object) view.findViewById(R.id.secondDeskBG);
         bg.setEnabled(false);
+
+        if (MainActivity.secondDeskPinsDone)
+            bg.setIcon("bg_board_2");
 
         for (ObjectInfo object : objects2.get(1)) {
             try {

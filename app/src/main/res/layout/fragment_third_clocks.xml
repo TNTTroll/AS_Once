@@ -17,8 +17,10 @@
         android:background="@drawable/bg_wall"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdClocksBack"
@@ -33,8 +35,8 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdClocks_1"
-        android:layout_width="133dp"
-        android:layout_height="183dp"
+        android:layout_width="404px"
+        android:layout_height="404px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -42,15 +44,15 @@
         android:background="@drawable/crystal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdClocks_2"
-        android:layout_width="133dp"
-        android:layout_height="183dp"
+        android:layout_width="404px"
+        android:layout_height="404px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -58,15 +60,15 @@
         android:background="@drawable/crystal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdClocks_3"
-        android:layout_width="133dp"
-        android:layout_height="183dp"
+        android:layout_width="404px"
+        android:layout_height="404px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -74,15 +76,15 @@
         android:background="@drawable/crystal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdClocks_4"
-        android:layout_width="133dp"
-        android:layout_height="183dp"
+        android:layout_width="404px"
+        android:layout_height="404px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -90,10 +92,10 @@
         android:background="@drawable/crystal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdHourArrow"
@@ -106,8 +108,9 @@
         android:background="@drawable/arrow_hour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.423" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,17 +48,13 @@ public class _PUZZLES {
     public static int[] secondTime = {2, 3};
 
     public static int[] secondTableLockersSequence = {1, 3, 2};
-    public static int[] secondTableImagesSequence = {1, 3, 5, 2, 4};
+    public static int[] secondTableImagesSequence = {1, 5, 2, 6, 3, 4};
 
     // <<< THIRD
     public static int[] thirdClocksSequence = {1, 0, 0, 0};
     public static int[] thirdTeethClickSequence = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     public static int[] thirdTeethShowSequence = {9, 8, 7, 6, 5, 4, 3, 2, 1};
 
-    public static int[] thirdPaintSequence = {  1, 0, 0, 0,
-                                                0, 1, 0, 0,
-                                                0, 0, 1, 0,
-                                                0, 0, 0, 1 };
     public static boolean[] thirdEaselSequence = { true, false, false, false, false, false, false,
                                                 false, true, false, false, false, false, false,
                                                 false, false, true, false, false, false, false,

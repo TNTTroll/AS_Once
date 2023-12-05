@@ -33,7 +33,7 @@ public class SecondTable extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object bg, hammer;
+    Object bg, hammer, hLocker;
     Object[] pins = new Object[3];
 
     int[] needLocker = _PUZZLES.secondTableLockersSequence;
@@ -159,6 +159,8 @@ public class SecondTable extends Fragment implements View.OnClickListener {
                     image.setEnabled(false);
 
                 hammer.setVisibility(View.VISIBLE);
+
+                hLocker.setVisibility(View.GONE);
             }
 
             else if (!MainActivity.getAchievement(5))
@@ -175,11 +177,14 @@ public class SecondTable extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_second_table, container, false);
 
-        Object wall = (Object) view.findViewById(R.id.secondTableWallBG);
-        wall.setEnabled(false);
-
         bg = (Object) view.findViewById(R.id.secondTableBG);
         bg.setEnabled(false);
+
+        hLocker = (Object) view.findViewById(R.id.secondTableHammerLocker);
+        hLocker.setEnabled(false);
+
+        if (MainActivity.secondTableImagesDone)
+            hLocker.setVisibility(View.GONE);
 
         int lockerCount = 0;
         int pinCount = 0;

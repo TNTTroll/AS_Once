@@ -28,6 +28,9 @@ public class ThirdColors extends Fragment implements View.OnClickListener {
 
     View view;
 
+    Object book;
+    boolean page = false;
+
     public ThirdColors() {
     }
 
@@ -53,6 +56,15 @@ public class ThirdColors extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.thirdColorsBack)
             getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree1()).addToBackStack(null).commit();
+
+        else if (v.getId() == R.id.thirdColorsBook) {
+            if (page)
+                book.setIcon("colors_1");
+            else
+                book.setIcon("colors_2");
+
+            page = !page;
+        }
     }
 
     @Override
@@ -60,6 +72,10 @@ public class ThirdColors extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_third_colors, container, false);
+
+        book = (Object) view.findViewById(R.id.thirdColorsBook);
+        book.setParam("book", "colors_1");
+        book.setOnClickListener(this);
 
         Object bg = (Object) view.findViewById(R.id.thirdColorsBG);
         bg.setEnabled(false);

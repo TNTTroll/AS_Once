@@ -1,6 +1,7 @@
 package com.example.onceuponatime;
 
 import static com.example.onceuponatime.MainActivity.player;
+import static com.example.onceuponatime.Scene.indicator;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -50,10 +51,12 @@ public class Acception extends DialogFragment implements View.OnClickListener {
             switch (player.getLevel()) {
                 case 1:
                     getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomTwo4()).commit();
+                    indicator.setIcon("bg_indicator_2");
                     break;
 
                 case 2:
                     getParentFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree4()).commit();
+                    indicator.setIcon("bg_indicator_3");
                     break;
             }
 

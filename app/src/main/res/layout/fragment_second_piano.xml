@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_wall"
+        android:background="@drawable/bg_piano"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,66 +32,63 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Object
+        android:id="@+id/secondPianoSlot"
+        android:layout_width="696px"
+        android:layout_height="278px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/piano_slot"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_1"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintEnd_toStartOf="@+id/secondPiano_2"
+        app:layout_constraintTop_toTopOf="@+id/secondPiano_2" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_2"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@+id/secondPiano_1"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/secondPiano_1"
-        app:layout_constraintTop_toTopOf="@+id/secondPiano_1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toStartOf="@+id/secondPiano_3"
+        app:layout_constraintTop_toTopOf="@+id/secondPiano_3" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_3"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@+id/secondPiano_2"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toEndOf="@+id/secondPiano_2"
-        app:layout_constraintTop_toTopOf="@+id/secondPiano_2"
-        app:layout_constraintVertical_bias="0.669" />
+        app:layout_constraintEnd_toStartOf="@+id/secondPiano_4"
+        app:layout_constraintTop_toTopOf="@+id/secondPiano_4" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_4"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@+id/secondPiano_3"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toEndOf="@+id/secondPiano_3"
-        app:layout_constraintTop_toTopOf="@+id/secondPiano_3"
-        app:layout_constraintVertical_bias="0.669" />
+        app:layout_constraintBottom_toBottomOf="@+id/secondPianoBG"
+        app:layout_constraintEnd_toEndOf="@+id/secondPianoBG"
+        app:layout_constraintStart_toStartOf="@+id/secondPianoBG" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_5"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
@@ -99,12 +96,12 @@
         app:layout_constraintBottom_toBottomOf="@+id/secondPiano_4"
         app:layout_constraintStart_toEndOf="@+id/secondPiano_4"
         app:layout_constraintTop_toTopOf="@+id/secondPiano_4"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_6"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
@@ -116,8 +113,8 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/secondPiano_7"
-        android:layout_width="91dp"
-        android:layout_height="234dp"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/pnc"
@@ -134,11 +131,12 @@
         android:layout_height="505px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="84dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/arrow_minute"
         android:contentDescription="@string/app_name"
         android:rotation="90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

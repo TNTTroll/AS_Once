@@ -18,7 +18,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/bg_wall"
+        android:background="@drawable/bg_room23"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,13 +78,13 @@
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/second3Table"
-        android:layout_width="336dp"
-        android:layout_height="275dp"
-        android:layout_marginEnd="168dp"
+        android:layout_width="363dp"
+        android:layout_height="292dp"
+        android:layout_marginEnd="120dp"
         android:background="@drawable/pnc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.882" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

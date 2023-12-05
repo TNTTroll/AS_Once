@@ -18,7 +18,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/bg_wall"
+        android:background="@drawable/bg_room22"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,26 +54,27 @@
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/second2Piano"
-        android:layout_width="382dp"
-        android:layout_height="283dp"
+        android:layout_width="389dp"
+        android:layout_height="330dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginStart="40dp"
         android:background="@drawable/pnc"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/second2Desk"
-        android:layout_width="322dp"
-        android:layout_height="353dp"
+        android:layout_width="268dp"
+        android:layout_height="311dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="648dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginEnd="160dp"
         android:background="@drawable/pnc"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/second2BG"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

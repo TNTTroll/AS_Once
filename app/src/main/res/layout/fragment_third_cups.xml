@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_wall"
+        android:background="@drawable/bg_cups"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,148 +34,112 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdCups_1"
-        android:layout_width="132dp"
-        android:layout_height="113dp"
+        android:layout_width="350px"
+        android:layout_height="350px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/cup_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdCups_2"
-        android:layout_width="132dp"
-        android:layout_height="113dp"
+        android:layout_width="350px"
+        android:layout_height="350px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="452dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginStart="312dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/cup_2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/thirdCupsBG"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdCups_3"
-        android:layout_width="132dp"
-        android:layout_height="113dp"
+        android:layout_width="350px"
+        android:layout_height="350px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="628dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/cup_3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/thirdCupsBG"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/thirdCups_4"
-        android:layout_width="132dp"
-        android:layout_height="113dp"
+        android:layout_width="350px"
+        android:layout_height="350px"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="796dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/cup_4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/thirdCupsBG"
+        app:layout_constraintEnd_toEndOf="@+id/thirdCupsBG" />
 
     <com.example.onceuponatime.Holder
         android:id="@+id/thirdCupsTap_1"
-        android:layout_width="95dp"
-        android:layout_height="91dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/tap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/crystal"
+        app:layout_constraintEnd_toStartOf="@+id/thirdCupsTap_2"
+        app:layout_constraintTop_toTopOf="@+id/thirdCupsTap_2" />
 
     <com.example.onceuponatime.Holder
         android:id="@+id/thirdCupsTap_2"
-        android:layout_width="95dp"
-        android:layout_height="91dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/tap"
+        android:background="@drawable/crystal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.389"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.287" />
 
     <com.example.onceuponatime.Holder
         android:id="@+id/thirdCupsTap_3"
-        android:layout_width="95dp"
-        android:layout_height="91dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/tap"
+        android:background="@drawable/crystal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.287" />
 
     <com.example.onceuponatime.Holder
         android:id="@+id/thirdCupsTap_4"
-        android:layout_width="95dp"
-        android:layout_height="91dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/tap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
-
-    <com.example.onceuponatime.Holder
-        android:id="@+id/thirdCupsTap_5"
-        android:layout_width="95dp"
-        android:layout_height="91dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/tap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
-
-    <com.example.onceuponatime.Holder
-        android:id="@+id/thirdCupsTap_6"
-        android:layout_width="95dp"
-        android:layout_height="91dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/tap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.927"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        android:layout_marginStart="40dp"
+        android:background="@drawable/crystal"
+        app:layout_constraintStart_toEndOf="@+id/thirdCupsTap_3"
+        app:layout_constraintTop_toTopOf="@+id/thirdCupsTap_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

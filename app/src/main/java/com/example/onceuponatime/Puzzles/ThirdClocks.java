@@ -85,8 +85,8 @@ public class ThirdClocks extends Fragment implements View.OnClickListener {
 
                     int currentClock = Integer.parseInt(obj.getName().split("_")[1]) - 1;
 
-                    clocks[currentClock].setRotation((usedClocks[currentClock] + 1) * 90);
                     usedClocks[currentClock] = (usedClocks[currentClock] + 1) % 4;
+                    clocks[currentClock].setIcon("clocks_" + usedClocks[currentClock]);
 
                     break;
                 }
@@ -126,7 +126,7 @@ public class ThirdClocks extends Fragment implements View.OnClickListener {
                 if (object.getName().trim().startsWith("thirdClocks_")) {
                     if (MainActivity.thirdClocksDone) {
                         obj.setEnabled(false);
-                        obj.setRotation(needClocks[clockCount] * 90);
+                        obj.setIcon("clocks_" + needClocks[clockCount]);
                     }
 
                     clocks[clockCount] = obj;

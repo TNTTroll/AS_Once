@@ -35,7 +35,6 @@ public class ThirdPaint extends Fragment implements View.OnClickListener {
     int paintCount = 16;
 
     int[] paintAngle = new int[paintCount];
-    int[] paintAngleCorrect = _PUZZLES.thirdPaintSequence;
 
     public ThirdPaint() {
     }
@@ -135,14 +134,14 @@ public class ThirdPaint extends Fragment implements View.OnClickListener {
         for (int index = 1; index <= paintCount; index++) {
             Object paint = (Object) view.findViewById(getResId("thirdPaint_" + index, R.id.class));
 
-            paint.setParam("thirdPaint_" + index, "crystal");
+            paint.setParam("thirdPaint_" + index, "painting_"+index);
             paint.setOnClickListener(this);
 
             setPosition(paint);
             paint.setRotation((paintAngle[index - 1]) * 90);
 
             if (MainActivity.thirdPaintDone)
-                paint.setEnabled(false);
+                paint.setVisibility(View.GONE);
         }
 
         return view;
@@ -155,10 +154,9 @@ public class ThirdPaint extends Fragment implements View.OnClickListener {
     }
 
     private boolean checkPaints() {
-        for (int x = 0; x < paintAngle.length; x++) {
-            if (paintAngle[x] != paintAngleCorrect[x])
+        for (int i : paintAngle)
+            if (i != 0)
                 return false;
-        }
 
         return true;
     }
@@ -168,7 +166,7 @@ public class ThirdPaint extends Fragment implements View.OnClickListener {
         Point size = new Point();
         MainActivity.display.getSize(size);
 
-        double width = size.x * 0.2;
+        double width = size.x * 0.287;
         double height = size.y * 0.13;
 
         obj.setX( (int) width );

@@ -33,7 +33,7 @@ public class SecondPiano extends Fragment implements View.OnClickListener {
 
     View view;
 
-    Object arrow;
+    Object arrow, slot;
 
     int[] needPlate = {1, 2, 3, 4};
 
@@ -103,6 +103,8 @@ public class SecondPiano extends Fragment implements View.OnClickListener {
 
                 arrow.setVisibility(View.VISIBLE);
 
+                slot.setVisibility(View.GONE);
+
                 for (Object plate : plates)
                     plate.setEnabled(false);
             }
@@ -118,6 +120,12 @@ public class SecondPiano extends Fragment implements View.OnClickListener {
 
         Object wall = (Object) view.findViewById(R.id.secondPianoBG);
         wall.setEnabled(false);
+
+        slot = (Object) view.findViewById(R.id.secondPianoSlot);
+        slot.setEnabled(false);
+
+        if (MainActivity.secondPianoDone)
+            slot.setVisibility(View.GONE);
 
         int plateCount = 0;
         for (ObjectInfo object : objects2.get(1)) {

@@ -110,7 +110,7 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                     Object pixel = (Object) view.findViewById(resID);
 
                     if (pixelColored[index - 1])
-                        pixel.setIcon("no");
+                        pixel.setIcon("none");
                     else
                         pixel.setIcon("yes");
 
@@ -127,7 +127,7 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                 for (Object pixel : pixels)
                     pixel.setVisibility(View.GONE);
 
-                bg.setIcon("bg_clock");
+                bg.setIcon("bg_easel_2");
 
             } else if (!MainActivity.getAchievement(8))
                 if (achieveEasel())
@@ -143,13 +143,11 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
 
         view = inflater.inflate(R.layout.fragment_third_easel, container, false);
 
-        Object wall = (Object) view.findViewById(R.id.thirdEaselWallBG);
-        wall.setEnabled(false);
-
         bg = (Object) view.findViewById(R.id.thirdEaselBG);
         bg.setEnabled(false);
+
         if (MainActivity.thirdEaselDone)
-            bg.setIcon("bg_clock");
+            bg.setIcon("bg_easel_2");
 
         Object back = (Object) view.findViewById(R.id.thirdEaselBack);
         back.setOnClickListener(this);
@@ -161,7 +159,7 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
                 int resID = getResId("thirdEasel_" + index, R.id.class);
                 Object obj = (Object) view.findViewById(resID);
 
-                obj.setParam("thirdEasel_" + index, "no");
+                obj.setParam("thirdEasel_" + index, "none");
                 obj.setOnClickListener(this);
 
                 if ( obj.getName().trim().startsWith("thirdEasel_")  ) {
@@ -199,6 +197,8 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
             catch(NullPointerException ignored) {}
         }
 
+        palette.setVisibility(View.GONE);
+
         return view;
     }
 
@@ -223,8 +223,8 @@ public class ThirdEasel extends Fragment implements View.OnClickListener {
         Point size = new Point();
         MainActivity.display.getSize(size);
 
-        double width = size.x * 0.433;
-        double height = size.y * 0.2;
+        double width = size.x * 0.15;
+        double height = size.y * 0.05;
 
         obj.setX( (int) width );
         obj.setY( (int) height );
