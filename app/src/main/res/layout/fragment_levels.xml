@@ -18,33 +18,38 @@
 
     <com.example.onceuponatime.Object
         android:id="@+id/lvl_1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginBottom="228dp"
-        android:background="@drawable/yes"
+        android:layout_width="288px"
+        android:layout_height="399px"
+        android:background="@drawable/level_2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/lvl_2"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/lvlBG"
+        app:layout_constraintTop_toBottomOf="@+id/lvlText"
+        app:layout_constraintVertical_bias="0.359" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/lvl_2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="532dp"
-        android:layout_marginBottom="232dp"
-        android:background="@drawable/yes"
+        android:layout_width="288px"
+        android:layout_height="399px"
+        android:layout_marginBottom="156dp"
+        android:background="@drawable/level_2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/lvlBG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvlText"
+        app:layout_constraintVertical_bias="0.893" />
 
     <com.example.onceuponatime.Object
         android:id="@+id/lvl_3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="796dp"
-        android:layout_marginBottom="232dp"
-        android:background="@drawable/yes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="288px"
+        android:layout_height="399px"
+        android:background="@drawable/level_2"
+        app:layout_constraintBottom_toBottomOf="@+id/lvlBG"
+        app:layout_constraintEnd_toEndOf="@+id/lvlBG"
+        app:layout_constraintStart_toEndOf="@+id/lvl_2"
+        app:layout_constraintTop_toBottomOf="@+id/lvlText"
+        app:layout_constraintVertical_bias="0.359" />
 
     <ImageButton
         android:id="@+id/lvlNo"
@@ -52,7 +57,7 @@
         android:layout_height="100dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/no"
+        android:background="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -64,7 +69,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="50px"
-        android:text="Where to go, pal?"
+        android:text="Выберите уровень"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
