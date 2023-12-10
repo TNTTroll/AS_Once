@@ -111,6 +111,7 @@ public class RoomOne1 extends Fragment implements View.OnClickListener {
         bg.setEnabled(false);
 
         storage = (Object) view.findViewById(R.id.first1Closet);
+        storage.setEnabled(false);
         if (MainActivity.firstWindowsDone)
             storage.setIcon("room1_storage_open");
 

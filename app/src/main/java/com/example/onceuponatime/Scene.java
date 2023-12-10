@@ -43,7 +43,7 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
     public static void reloadInventory() {
         for (int x = 0; x < btn_invs.length; x++) {
-            btn_invs[x].setImageResource(R.drawable.black);
+            btn_invs[x].setImageResource(R.drawable.inv_slot);
 
             if (inventory[x] != null)
                 btn_invs[x].setImageDrawable(inventory[x].icon);
@@ -86,7 +86,7 @@ public class Scene extends AppCompatActivity implements View.OnClickListener {
 
         switch (player.getLevel()) {
             case 1:
-                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomThree3()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.roomView, new RoomOne4()).commit();
                 indicator.setIcon("bg_indicator_1");
                 break;
 

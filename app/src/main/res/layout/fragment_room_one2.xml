@@ -51,25 +51,25 @@
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/firstPlates"
-        android:layout_width="375dp"
-        android:layout_height="228dp"
+        android:layout_width="325dp"
+        android:layout_height="203dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/firstBookcase"
-        android:layout_width="419dp"
-        android:layout_height="373dp"
+        android:layout_width="281dp"
+        android:layout_height="333dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="104dp"
+        android:layout_marginEnd="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.577" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

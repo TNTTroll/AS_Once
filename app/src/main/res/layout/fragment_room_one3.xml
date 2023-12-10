@@ -75,23 +75,23 @@
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/first3Closet"
-        android:layout_width="473dp"
-        android:layout_height="104dp"
+        android:layout_width="329dp"
+        android:layout_height="101dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.onceuponatime.Puzzle
         android:id="@+id/first3Chest"
-        android:layout_width="410dp"
-        android:layout_height="220dp"
+        android:layout_width="286dp"
+        android:layout_height="161dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
